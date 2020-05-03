@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,11 @@
 		B68556BA245E86FD00742344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556B8245E86FD00742344 /* Main.storyboard */; };
 		B68556BC245E86FE00742344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68556BB245E86FE00742344 /* Assets.xcassets */; };
 		B68556BF245E86FE00742344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556BD245E86FE00742344 /* LaunchScreen.storyboard */; };
+		B68556CA245F4C2600742344 /* ResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556C9245F4C2600742344 /* ResponseString.swift */; };
+		B68556D0245F4CAB00742344 /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556CF245F4CAB00742344 /* Color+Extensions.swift */; };
+		B68556D2245F4CBA00742344 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556D1245F4CBA00742344 /* Models.swift */; };
+		B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */; };
+		B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +32,11 @@
 		B68556BB245E86FE00742344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68556BE245E86FE00742344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68556C0245E86FE00742344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B68556C9245F4C2600742344 /* ResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseString.swift; sourceTree = "<group>"; };
+		B68556CF245F4CAB00742344 /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		B68556D1245F4CBA00742344 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AqiStoryBoard.storyboard; sourceTree = "<group>"; };
+		B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,15 +81,76 @@
 		B68556B1245E86FD00742344 /* BELL */ = {
 			isa = PBXGroup;
 			children = (
+				B68556C6245F4BFA00742344 /* Resources */,
+				B68556CB245F4C4F00742344 /* Sources */,
 				B68556B2245E86FD00742344 /* AppDelegate.swift */,
 				B68556B4245E86FD00742344 /* SceneDelegate.swift */,
-				B68556B6245E86FD00742344 /* ViewController.swift */,
-				B68556B8245E86FD00742344 /* Main.storyboard */,
-				B68556BB245E86FE00742344 /* Assets.xcassets */,
-				B68556BD245E86FE00742344 /* LaunchScreen.storyboard */,
 				B68556C0245E86FE00742344 /* Info.plist */,
 			);
 			path = BELL;
+			sourceTree = "<group>";
+		};
+		B68556C6245F4BFA00742344 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B68556C7245F4C0300742344 /* APIService */,
+				B68556C8245F4C0B00742344 /* StoryBoards */,
+				B68556BB245E86FE00742344 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B68556C7245F4C0300742344 /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				B68556C9245F4C2600742344 /* ResponseString.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
+		B68556C8245F4C0B00742344 /* StoryBoards */ = {
+			isa = PBXGroup;
+			children = (
+				B68556B8245E86FD00742344 /* Main.storyboard */,
+				B68556BD245E86FE00742344 /* LaunchScreen.storyboard */,
+				B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */,
+				B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */,
+			);
+			path = StoryBoards;
+			sourceTree = "<group>";
+		};
+		B68556CB245F4C4F00742344 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				B68556CE245F4C7500742344 /* ViewControllers */,
+				B68556CD245F4C6500742344 /* Extensions */,
+				B68556CC245F4C5F00742344 /* Models */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		B68556CC245F4C5F00742344 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				B68556D1245F4CBA00742344 /* Models.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		B68556CD245F4C6500742344 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B68556CF245F4CAB00742344 /* Color+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B68556CE245F4C7500742344 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B68556B6245E86FD00742344 /* ViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		B93385885D3763B81D441359 /* Pods */ = {
@@ -88,7 +159,6 @@
 				23E772BFD5D5F8BA11DC5A75 /* Pods-BELL.debug.xcconfig */,
 				B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -155,6 +225,8 @@
 				B68556BF245E86FE00742344 /* LaunchScreen.storyboard in Resources */,
 				B68556BC245E86FE00742344 /* Assets.xcassets in Resources */,
 				B68556BA245E86FD00742344 /* Main.storyboard in Resources */,
+				B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */,
+				B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,7 +279,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B68556D0245F4CAB00742344 /* Color+Extensions.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
+				B68556CA245F4C2600742344 /* ResponseString.swift in Sources */,
+				B68556D2245F4CBA00742344 /* Models.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,
 				B68556B5245E86FD00742344 /* SceneDelegate.swift in Sources */,
 			);
