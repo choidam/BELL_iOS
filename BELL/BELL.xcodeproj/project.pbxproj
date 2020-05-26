@@ -21,6 +21,7 @@
 		B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */; };
 		B68AF2FF247D927A00C33FC9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF2FE247D927A00C33FC9 /* MapViewController.swift */; };
 		B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF300247D928700C33FC9 /* AqiViewController.swift */; };
+		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
 		B68AF2FE247D927A00C33FC9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		B68AF300247D928700C33FC9 /* AqiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiViewController.swift; sourceTree = "<group>"; };
+		B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -145,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				B68556CF245F4CAB00742344 /* Color+Extensions.swift */,
+				B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 				B68556D0245F4CAB00742344 /* Color+Extensions.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
 				B68556CA245F4C2600742344 /* ResponseString.swift in Sources */,
+				B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */,
 				B68556D2245F4CBA00742344 /* Models.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,

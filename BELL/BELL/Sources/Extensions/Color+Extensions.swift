@@ -7,3 +7,12 @@
 //
 
 import Foundation
+import UIKit
+
+extension UIColor {
+    
+    @nonobjc class var mainColor: UIColor {
+        return #colorLiteral(red: 0.5836365819, green: 0.5580925941, blue: 1, alpha: 1)
+    }
+    
+}
