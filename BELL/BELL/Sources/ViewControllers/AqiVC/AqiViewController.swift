@@ -10,14 +10,16 @@ import UIKit
 
 class AqiViewController: UIViewController {
 
+    @IBOutlet weak var aqiView: UIView!
+    
+    @IBOutlet weak var graphView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-    }
-    
+        self.aqiView.setViewShadow()
+        self.graphView.setViewShadow()
 
-    
+    }
 
 }
