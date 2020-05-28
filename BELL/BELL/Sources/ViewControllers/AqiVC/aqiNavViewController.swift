@@ -20,12 +20,10 @@ class aqiNavViewController: UINavigationController {
         return view
     }()
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         configNavigationBar()
-        
         changeGradientImage()
         
     }
@@ -63,9 +61,5 @@ class aqiNavViewController: UINavigationController {
         navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
         navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
     }
-    
-    
-    
-    
     
 }

@@ -11,17 +11,8 @@ import UIKit
 class AqiViewController: UIViewController {
 
     
-    @IBOutlet weak var aqiView: UIView!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        // setting navigation bar
-        self.navigationController?.view.backgroundColor = UIColor.mainColor
-        
-        // setting aqiview shadow
-        self.aqiView.setViewShadow()
-        
         
         
     }

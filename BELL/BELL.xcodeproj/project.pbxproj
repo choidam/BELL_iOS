@@ -79,6 +79,22 @@
 			path = AqiVC;
 			sourceTree = "<group>";
 		};
+		B64D52CD247FBC5E001B35C3 /* MapVC */ = {
+			isa = PBXGroup;
+			children = (
+				B68AF2FE247D927A00C33FC9 /* MapViewController.swift */,
+			);
+			path = MapVC;
+			sourceTree = "<group>";
+		};
+		B64D52CE247FBC69001B35C3 /* MainVC */ = {
+			isa = PBXGroup;
+			children = (
+				B68556B6245E86FD00742344 /* ViewController.swift */,
+			);
+			path = MainVC;
+			sourceTree = "<group>";
+		};
 		B68556A6245E86FD00742344 = {
 			isa = PBXGroup;
 			children = (
@@ -169,9 +185,9 @@
 		B68556CE245F4C7500742344 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B64D52CE247FBC69001B35C3 /* MainVC */,
+				B64D52CD247FBC5E001B35C3 /* MapVC */,
 				B64D52CC247FBB3F001B35C3 /* AqiVC */,
-				B68556B6245E86FD00742344 /* ViewController.swift */,
-				B68AF2FE247D927A00C33FC9 /* MapViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
