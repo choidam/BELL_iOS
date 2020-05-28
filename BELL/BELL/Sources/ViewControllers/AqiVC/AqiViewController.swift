@@ -16,14 +16,18 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var reloadButton: UIButton! // 위치 reload button
     
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var aqiStatusBigLabel: UILabel!
+    
     var locationManager: CLLocationManager = CLLocationManager()
-    var currentLocation: CLLocation! // 현재 위치
+    var currentLocation: CLLocation!
+    
+    var curLat: String = ""
+    var curLong: String = ""
     
     func authorizelocationStates(){
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             currentLocation = locationManager.location
-            print(currentLocation?.coordinate.latitude)
-            print(currentLocation?.coordinate.longitude)
         }
     }
     
@@ -44,8 +48,24 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         
+        let coor = locationManager.location?.coordinate
+       
+        self.curLat = String(format: "%.6f", coor!.latitude)
+        self.curLong = String(format: "%.6f", coor!.longitude)
+        
+        print("curLat???", self.curLat)
+        print("curLong???", self.curLong)
+        
+        getAqi()
+        
     }
     
+    // 미세먼지 API 연결
+    func getAqi(){
+        
+        
+        
+    }
     
     @IBAction func clickReloadButton(_ sender: UIButton) {
         // rotate animation

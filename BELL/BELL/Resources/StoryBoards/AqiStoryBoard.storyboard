@@ -21,7 +21,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-RX-pQZ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="929"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l72-Mk-CyU" customClass="MacawView">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l72-Mk-CyU">
                                                 <rect key="frame" x="18" y="416" width="378" height="378"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
@@ -45,35 +45,59 @@
                                                                         </constraints>
                                                                     </view>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q74-4d-myg">
-                                                                        <rect key="frame" x="20" y="20" width="148.5" height="19.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                                        <nil key="textColor"/>
+                                                                        <rect key="frame" x="20" y="20" width="148.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초미세먼지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="416-fX-eC5">
-                                                                        <rect key="frame" x="209.5" y="20" width="148.5" height="19.5"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                                        <rect key="frame" x="209.5" y="20" width="148.5" height="17"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음  27㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-Vh-cFz">
+                                                                        <rect key="frame" x="10" y="52" width="168.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                        <nil key="textColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음  27㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-v9-MrF">
+                                                                        <rect key="frame" x="199.5" y="52" width="168.5" height="21"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="QLu-rR-rzb" firstAttribute="leading" secondItem="HbF-Vh-cFz" secondAttribute="trailing" constant="10" id="AN4-dv-OlO"/>
                                                                     <constraint firstAttribute="trailing" secondItem="416-fX-eC5" secondAttribute="trailing" constant="20" id="KVJ-Ja-YUe"/>
+                                                                    <constraint firstItem="wpD-v9-MrF" firstAttribute="top" secondItem="416-fX-eC5" secondAttribute="bottom" constant="15" id="MvX-I4-bt0"/>
+                                                                    <constraint firstItem="wpD-v9-MrF" firstAttribute="leading" secondItem="QLu-rR-rzb" secondAttribute="trailing" constant="10" id="Nsd-HF-o1Y"/>
                                                                     <constraint firstItem="Q74-4d-myg" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="20" id="OFG-5Z-QIb"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="centerX" secondItem="NTs-vf-gow" secondAttribute="centerX" id="PcY-hG-8Ev"/>
                                                                     <constraint firstAttribute="bottom" secondItem="QLu-rR-rzb" secondAttribute="bottom" constant="10" id="Pf8-2k-0fs"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="leading" secondItem="Q74-4d-myg" secondAttribute="trailing" constant="20" id="TJS-kB-Tvi"/>
                                                                     <constraint firstItem="416-fX-eC5" firstAttribute="leading" secondItem="QLu-rR-rzb" secondAttribute="trailing" constant="20" id="Y3e-Mb-mNW"/>
+                                                                    <constraint firstItem="HbF-Vh-cFz" firstAttribute="top" secondItem="Q74-4d-myg" secondAttribute="bottom" constant="15" id="kUs-bd-Wew"/>
                                                                     <constraint firstAttribute="height" constant="100" id="nKn-Uz-0CU"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="wpD-v9-MrF" secondAttribute="trailing" constant="10" id="qN6-Wa-VAa"/>
                                                                     <constraint firstItem="Q74-4d-myg" firstAttribute="leading" secondItem="NTs-vf-gow" secondAttribute="leading" constant="20" id="sPb-cF-1Ta"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="10" id="tMk-Yo-2a6"/>
+                                                                    <constraint firstItem="HbF-Vh-cFz" firstAttribute="leading" secondItem="NTs-vf-gow" secondAttribute="leading" constant="10" id="vgo-Cq-wNd"/>
                                                                     <constraint firstItem="416-fX-eC5" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="20" id="vws-nh-4ZR"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-eA-Ekd">
-                                                                <rect key="frame" x="30" y="190.5" width="318" height="27.5"/>
-                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="23"/>
+                                                                <rect key="frame" x="30" y="176.5" width="318" height="25.5"/>
+                                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쾌적한 날이에요~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-43-jPo">
+                                                                <rect key="frame" x="30" y="207" width="318" height="16"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
@@ -82,11 +106,14 @@
                                                         <constraints>
                                                             <constraint firstItem="NTs-vf-gow" firstAttribute="leading" secondItem="70C-bO-i5p" secondAttribute="leading" id="4o5-7s-fIN"/>
                                                             <constraint firstAttribute="bottom" secondItem="NTs-vf-gow" secondAttribute="bottom" id="G1Y-vY-t5C"/>
+                                                            <constraint firstAttribute="trailing" secondItem="bQz-43-jPo" secondAttribute="trailing" constant="30" id="IDk-lH-PO1"/>
+                                                            <constraint firstItem="bQz-43-jPo" firstAttribute="leading" secondItem="70C-bO-i5p" secondAttribute="leading" constant="30" id="L0W-h5-DrZ"/>
                                                             <constraint firstAttribute="trailing" secondItem="4nF-eA-Ekd" secondAttribute="trailing" constant="30" id="Xd3-M2-a7A"/>
                                                             <constraint firstItem="4nF-eA-Ekd" firstAttribute="centerX" secondItem="70C-bO-i5p" secondAttribute="centerX" id="bGp-ww-i4a"/>
                                                             <constraint firstAttribute="trailing" secondItem="NTs-vf-gow" secondAttribute="trailing" id="erh-lm-vfB"/>
+                                                            <constraint firstItem="NTs-vf-gow" firstAttribute="top" secondItem="bQz-43-jPo" secondAttribute="bottom" constant="15" id="gUW-Nt-lSp"/>
                                                             <constraint firstItem="4nF-eA-Ekd" firstAttribute="leading" secondItem="70C-bO-i5p" secondAttribute="leading" constant="30" id="qgl-if-FD5"/>
-                                                            <constraint firstItem="NTs-vf-gow" firstAttribute="top" secondItem="4nF-eA-Ekd" secondAttribute="bottom" constant="20" id="uAV-Nd-S0K"/>
+                                                            <constraint firstItem="bQz-43-jPo" firstAttribute="top" secondItem="4nF-eA-Ekd" secondAttribute="bottom" constant="5" id="xat-PD-9HO"/>
                                                         </constraints>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서대문구 남가좌동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-lr-pGz">
@@ -172,6 +199,8 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
+                        <outlet property="addressLabel" destination="SQ8-lr-pGz" id="YuS-BQ-rV1"/>
+                        <outlet property="aqiStatusBigLabel" destination="4nF-eA-Ekd" id="Wmy-FU-aaE"/>
                         <outlet property="aqiView" destination="jDK-lB-u8j" id="ttb-Af-aUI"/>
                         <outlet property="graphView" destination="l72-Mk-CyU" id="zH1-Mo-S4d"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>

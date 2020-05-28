@@ -25,7 +25,6 @@ class aqiNavViewController: UINavigationController {
         
         configNavigationBar()
         changeGradientImage()
-        
     }
     
     //  creates and return a gradient image
