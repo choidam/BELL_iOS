@@ -12,12 +12,15 @@ import CoreLocation
 class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var aqiView: UIView! // 실시간 미세먼지 subview
+    @IBOutlet weak var chartWholeView: UIView!
     @IBOutlet weak var graphView: AqiChartView! // 실시간 미세먼지 chart subview
     
     @IBOutlet weak var reloadButton: UIButton! // 위치 reload button
     
     @IBOutlet weak var addressLabel: UILabel! // 내 주소
     @IBOutlet weak var aqiStatusBigLabel: UILabel!
+    @IBOutlet weak var aqiStatusSmallLabel: UILabel!
+    @IBOutlet weak var EmojiImageView: UIImageView!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
@@ -54,8 +57,9 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         self.aqiView.setViewShadow()
+        self.chartWholeView.setViewShadow()
         
-//        self.graphView.setViewShadow()
+        self.graphView.setViewShadow()
         self.graphView.contentMode = .scaleAspectFit
         
         locationManager.delegate = self

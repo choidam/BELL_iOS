@@ -31,4 +31,8 @@ extension UIColor {
         return UIColor(rgb: 0xF7F6F5)
     }
     
+    @nonobjc class var darkGray: UIColor {
+        return UIColor(rgb: 0x393C41)
+    }
+    
 }

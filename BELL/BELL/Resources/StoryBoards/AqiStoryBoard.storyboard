@@ -21,14 +21,6 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-RX-pQZ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="929"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l72-Mk-CyU" customClass="AqiChartView" customModule="BELL" customModuleProvider="target">
-                                                <rect key="frame" x="18" y="416" width="378" height="189"/>
-                                                <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.033176731420000001" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
-                                                <color key="tintColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="l72-Mk-CyU" secondAttribute="height" multiplier="1:0.5" id="pkc-VU-jVp"/>
-                                                </constraints>
-                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDK-lB-u8j">
                                                 <rect key="frame" x="18" y="18" width="378" height="378"/>
                                                 <subviews>
@@ -102,10 +94,19 @@
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="emoji1" translatesAutoresizingMaskIntoConstraints="NO" id="bDf-8w-3kf">
+                                                                <rect key="frame" x="139" y="56.5" width="100" height="100"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="width" constant="100" id="Mel-uw-05j"/>
+                                                                    <constraint firstAttribute="width" secondItem="bDf-8w-3kf" secondAttribute="height" multiplier="1:1" id="NBp-cw-XZq"/>
+                                                                </constraints>
+                                                            </imageView>
                                                         </subviews>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                         <constraints>
+                                                            <constraint firstItem="4nF-eA-Ekd" firstAttribute="top" secondItem="bDf-8w-3kf" secondAttribute="bottom" constant="20" id="4C7-d4-Ug3"/>
                                                             <constraint firstItem="NTs-vf-gow" firstAttribute="leading" secondItem="70C-bO-i5p" secondAttribute="leading" id="4o5-7s-fIN"/>
+                                                            <constraint firstItem="bDf-8w-3kf" firstAttribute="centerX" secondItem="70C-bO-i5p" secondAttribute="centerX" id="EIR-Q5-2cT"/>
                                                             <constraint firstAttribute="bottom" secondItem="NTs-vf-gow" secondAttribute="bottom" id="G1Y-vY-t5C"/>
                                                             <constraint firstAttribute="trailing" secondItem="bQz-43-jPo" secondAttribute="trailing" constant="30" id="IDk-lH-PO1"/>
                                                             <constraint firstItem="bQz-43-jPo" firstAttribute="leading" secondItem="70C-bO-i5p" secondAttribute="leading" constant="30" id="L0W-h5-DrZ"/>
@@ -117,7 +118,7 @@
                                                             <constraint firstItem="bQz-43-jPo" firstAttribute="top" secondItem="4nF-eA-Ekd" secondAttribute="bottom" constant="5" id="xat-PD-9HO"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서대문구 남가좌동" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-lr-pGz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-lr-pGz">
                                                         <rect key="frame" x="91.5" y="12" width="270" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="SQ8-lr-pGz" secondAttribute="height" multiplier="270:16" id="VHi-Au-npM"/>
@@ -162,15 +163,52 @@
                                                     <constraint firstItem="X7Z-ZH-oE3" firstAttribute="top" secondItem="jDK-lB-u8j" secondAttribute="top" constant="11" id="y4J-86-mtE"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-VJ-s65">
+                                                <rect key="frame" x="18" y="416" width="378" height="340"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-op-9cH" customClass="AqiChartView" customModule="BELL" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="50" width="378" height="290"/>
+                                                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 현황" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-nv-cUy">
+                                                        <rect key="frame" x="10" y="14" width="358" height="21"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-rP-G22">
+                                                        <rect key="frame" x="325" y="12" width="43" height="27"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <state key="normal" title="더보기 &gt;">
+                                                            <color key="titleColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstItem="fGY-nv-cUy" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="top" constant="14" id="81G-gO-dc5"/>
+                                                    <constraint firstItem="IE1-op-9cH" firstAttribute="leading" secondItem="Iwn-VJ-s65" secondAttribute="leading" id="JD7-6q-Eln"/>
+                                                    <constraint firstAttribute="bottom" secondItem="IE1-op-9cH" secondAttribute="bottom" id="NQK-78-rqn"/>
+                                                    <constraint firstItem="fGY-nv-cUy" firstAttribute="leading" secondItem="Iwn-VJ-s65" secondAttribute="leading" constant="10" id="cga-fJ-nIl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="fGY-nv-cUy" secondAttribute="trailing" constant="10" id="dE5-xT-SDm"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IE1-op-9cH" secondAttribute="trailing" id="es6-fD-BOv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="vS5-rP-G22" secondAttribute="trailing" constant="10" id="hy5-Xb-sQD"/>
+                                                    <constraint firstItem="vS5-rP-G22" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="top" constant="12" id="p5a-9f-bpF"/>
+                                                    <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="vS5-rP-G22" secondAttribute="bottom" constant="11" id="pOk-sj-4zO"/>
+                                                    <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="top" constant="50" id="vRf-6c-F1e"/>
+                                                    <constraint firstAttribute="width" secondItem="Iwn-VJ-s65" secondAttribute="height" multiplier="1:0.9" id="xho-Sc-UeL"/>
+                                                    <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="fGY-nv-cUy" secondAttribute="bottom" constant="15" id="ymk-sa-KT7"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="267-aP-0sF"/>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="centerX" secondItem="Obs-RX-pQZ" secondAttribute="centerX" id="41e-Zv-hKi"/>
-                                            <constraint firstAttribute="trailing" secondItem="l72-Mk-CyU" secondAttribute="trailing" constant="18" id="BTS-lj-Hkp"/>
-                                            <constraint firstItem="l72-Mk-CyU" firstAttribute="top" secondItem="jDK-lB-u8j" secondAttribute="bottom" constant="20" id="K7z-u0-rNz"/>
+                                            <constraint firstAttribute="trailing" secondItem="Iwn-VJ-s65" secondAttribute="trailing" constant="18" id="4R8-tD-94f"/>
+                                            <constraint firstItem="Iwn-VJ-s65" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="MLo-6G-4Mc"/>
+                                            <constraint firstItem="Iwn-VJ-s65" firstAttribute="top" secondItem="70C-bO-i5p" secondAttribute="bottom" constant="20" id="Mgl-EQ-SDe"/>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="top" secondItem="Obs-RX-pQZ" secondAttribute="top" constant="18" id="Q5i-eV-wzH"/>
-                                            <constraint firstItem="l72-Mk-CyU" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="gqk-rc-pT4"/>
                                             <constraint firstAttribute="trailing" secondItem="jDK-lB-u8j" secondAttribute="trailing" constant="18" id="icE-HQ-JWe"/>
                                             <constraint firstAttribute="bottom" secondItem="jDK-lB-u8j" secondAttribute="bottom" constant="533" id="j5C-FJ-FsM"/>
                                         </constraints>
@@ -200,10 +238,13 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
+                        <outlet property="EmojiImageView" destination="bDf-8w-3kf" id="1W0-iw-JZe"/>
                         <outlet property="addressLabel" destination="SQ8-lr-pGz" id="YuS-BQ-rV1"/>
                         <outlet property="aqiStatusBigLabel" destination="4nF-eA-Ekd" id="Wmy-FU-aaE"/>
+                        <outlet property="aqiStatusSmallLabel" destination="bQz-43-jPo" id="bST-5p-ihT"/>
                         <outlet property="aqiView" destination="jDK-lB-u8j" id="ttb-Af-aUI"/>
-                        <outlet property="graphView" destination="l72-Mk-CyU" id="zH1-Mo-S4d"/>
+                        <outlet property="chartWholeView" destination="Iwn-VJ-s65" id="3AB-kW-YRo"/>
+                        <outlet property="graphView" destination="IE1-op-9cH" id="EFh-5l-0jN"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>
                     </connections>
                 </viewController>
@@ -233,6 +274,7 @@
     </scenes>
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
+        <image name="emoji1" width="512" height="512"/>
         <image name="person" catalog="system" width="64" height="58"/>
     </resources>
 </document>
