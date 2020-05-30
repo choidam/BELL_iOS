@@ -12,19 +12,15 @@ import CoreLocation
 class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var aqiView: UIView! // 실시간 미세먼지 subview
-    @IBOutlet weak var graphView: UIView! // 실시간 미세먼지 chart subview
+    @IBOutlet weak var graphView: AqiChartView! // 실시간 미세먼지 chart subview
     
     @IBOutlet weak var reloadButton: UIButton! // 위치 reload button
     
-    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressLabel: UILabel! // 내 주소
     @IBOutlet weak var aqiStatusBigLabel: UILabel!
     
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
-    
-    var curLat: String = ""
-    var curLong: String = ""
-    
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
@@ -40,12 +36,10 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             manager.requestWhenInUseAuthorization()
             break
         case .authorizedWhenInUse:
-            self.currentLocation = manager.location
-            self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
+            self.firstSetting()
             break
         case .authorizedAlways:
-            self.currentLocation = manager.location
-            self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
+            self.firstSetting()
             break
         case .restricted :
             break
@@ -60,14 +54,15 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         super.viewDidLoad()
         
         self.aqiView.setViewShadow()
-        self.graphView.setViewShadow()
+        
+//        self.graphView.setViewShadow()
+        self.graphView.contentMode = .scaleAspectFit
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
-        
     }
     
     // 오류 처리
@@ -94,15 +89,9 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         
         // 이미 허용인 경우 처리
         if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
-            self.currentLocation = locationManager.location
-            print(self.currentLocation.coordinate.latitude)
-            print(self.currentLocation.coordinate.longitude)
-            
-            self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
+            self.firstSetting()
         }
-        
     }
-    
     
     @IBAction func clickReloadButton(_ sender: UIButton) {
         // rotate animation
@@ -112,6 +101,20 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         UIView.animate(withDuration: 0.5, delay: 0.5, options: UIView.AnimationOptions.curveEaseIn, animations: { () -> Void in
             self.reloadButton.transform = CGAffineTransform(rotationAngle: CGFloat.pi * 2.0)
         }, completion: nil)
+        
+        // reload chart animation
+        AqiChartView.playAnimations()
+    }
+    
+    func firstSetting(){
+        // find location and address
+        self.currentLocation = locationManager.location
+        print(self.currentLocation.coordinate.latitude)
+        print(self.currentLocation.coordinate.longitude)
+        self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
+        
+        // play chart animation
+        AqiChartView.playAnimations()
     }
     
     func findAddr(lat: CLLocationDegrees, long: CLLocationDegrees){

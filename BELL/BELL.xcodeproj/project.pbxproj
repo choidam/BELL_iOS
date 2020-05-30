@@ -10,6 +10,7 @@
 		8CD15985C354493D3A9C2D7D /* Pods_BELL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8556440705E5C15020EB5CA2 /* Pods_BELL.framework */; };
 		B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */; };
 		B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */; };
+		B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681CF7F24829C1700DB3526 /* AqiChartView.swift */; };
 		B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556B2245E86FD00742344 /* AppDelegate.swift */; };
 		B68556B5245E86FD00742344 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556B4245E86FD00742344 /* SceneDelegate.swift */; };
 		B68556B7245E86FD00742344 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556B6245E86FD00742344 /* ViewController.swift */; };
@@ -18,7 +19,7 @@
 		B68556BF245E86FE00742344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556BD245E86FE00742344 /* LaunchScreen.storyboard */; };
 		B68556CA245F4C2600742344 /* ResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556C9245F4C2600742344 /* ResponseString.swift */; };
 		B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556CF245F4CAB00742344 /* UIColor+Extensions.swift */; };
-		B68556D2245F4CBA00742344 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556D1245F4CBA00742344 /* Models.swift */; };
+		B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556D1245F4CBA00742344 /* AqiBar.swift */; };
 		B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */; };
 		B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */; };
 		B68AF2FF247D927A00C33FC9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF2FE247D927A00C33FC9 /* MapViewController.swift */; };
@@ -31,6 +32,7 @@
 		8556440705E5C15020EB5CA2 /* Pods_BELL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BELL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aqiNavViewController.swift; sourceTree = "<group>"; };
 		B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
+		B681CF7F24829C1700DB3526 /* AqiChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiChartView.swift; sourceTree = "<group>"; };
 		B68556AF245E86FD00742344 /* BELL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BELL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B68556B2245E86FD00742344 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B68556B4245E86FD00742344 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,7 +43,7 @@
 		B68556C0245E86FE00742344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B68556C9245F4C2600742344 /* ResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseString.swift; sourceTree = "<group>"; };
 		B68556CF245F4CAB00742344 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
-		B68556D1245F4CBA00742344 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		B68556D1245F4CBA00742344 /* AqiBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiBar.swift; sourceTree = "<group>"; };
 		B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AqiStoryBoard.storyboard; sourceTree = "<group>"; };
 		B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MapStoryBoard.storyboard; sourceTree = "<group>"; };
 		B68AF2FE247D927A00C33FC9 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 			children = (
 				B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */,
 				B68AF300247D928700C33FC9 /* AqiViewController.swift */,
+				B681CF7F24829C1700DB3526 /* AqiChartView.swift */,
 			);
 			path = AqiVC;
 			sourceTree = "<group>";
@@ -167,7 +170,7 @@
 		B68556CC245F4C5F00742344 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				B68556D1245F4CBA00742344 /* Models.swift */,
+				B68556D1245F4CBA00742344 /* AqiBar.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -319,11 +322,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */,
+				B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
 				B68556CA245F4C2600742344 /* ResponseString.swift in Sources */,
 				B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */,
 				B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */,
-				B68556D2245F4CBA00742344 /* Models.swift in Sources */,
+				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
 				B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,

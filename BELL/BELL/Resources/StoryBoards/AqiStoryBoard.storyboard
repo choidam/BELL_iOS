@@ -21,11 +21,12 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obs-RX-pQZ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="929"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l72-Mk-CyU">
-                                                <rect key="frame" x="18" y="416" width="378" height="378"/>
-                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l72-Mk-CyU" customClass="AqiChartView" customModule="BELL" customModuleProvider="target">
+                                                <rect key="frame" x="18" y="416" width="378" height="189"/>
+                                                <color key="backgroundColor" cyan="0.0" magenta="0.0" yellow="0.0" black="0.033176731420000001" alpha="1" colorSpace="custom" customColorSpace="genericCMYKColorSpace"/>
+                                                <color key="tintColor" red="0.96862745098039216" green="0.96470588235294119" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" secondItem="l72-Mk-CyU" secondAttribute="height" multiplier="1:1" id="pkc-VU-jVp"/>
+                                                    <constraint firstAttribute="width" secondItem="l72-Mk-CyU" secondAttribute="height" multiplier="1:0.5" id="pkc-VU-jVp"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDK-lB-u8j">

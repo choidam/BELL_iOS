@@ -27,10 +27,8 @@ extension UIColor {
         )
     }
     
-    
-    @nonobjc class var mainColor: UIColor {
-        // color literal
-        return #colorLiteral(red: 0.5836365819, green: 0.5580925941, blue: 1, alpha: 1)
+    @nonobjc class var lightGray: UIColor {
+        return UIColor(rgb: 0xF7F6F5)
     }
     
 }
