@@ -35,4 +35,9 @@ extension UIColor {
         return UIColor(rgb: 0x393C41)
     }
     
+    @nonobjc class var skyblue: UIColor {
+//        return UIColor(rgb: 0xe4e7ec)
+        return UIColor(rgb: 0xf0f5f9)
+    }
+    
 }

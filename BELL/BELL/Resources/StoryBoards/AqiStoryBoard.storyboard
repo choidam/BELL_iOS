@@ -172,7 +172,7 @@
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 현황" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-nv-cUy">
                                                         <rect key="frame" x="10" y="14" width="358" height="21"/>
-                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
@@ -203,35 +203,83 @@
                                                     <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="fGY-nv-cUy" secondAttribute="bottom" constant="15" id="ymk-sa-KT7"/>
                                                 </constraints>
                                             </view>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="SIb-Vo-V2a">
-                                                <rect key="frame" x="0.0" y="663" width="414" height="266"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="na8-xU-MPv">
+                                                <rect key="frame" x="18" y="663" width="378" height="170"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서대문구" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F4W-tJ-1on">
+                                                        <rect key="frame" x="18" y="20" width="342" height="19.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="흐림" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7H3-BP-7vO">
+                                                        <rect key="frame" x="18" y="46.5" width="342" height="14.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="22°C" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SpZ-dC-RK0">
+                                                        <rect key="frame" x="20" y="71" width="338" height="48"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aSh-bB-U89">
+                                                        <rect key="frame" x="325" y="12" width="43" height="27"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                        <state key="normal" title="더보기 &gt;">
+                                                            <color key="titleColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                <prototypes>
-                                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="v19-2K-kIg">
-                                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                                        <autoresizingMask key="autoresizingMask"/>
-                                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v19-2K-kIg" id="YhA-Ui-wCF">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </tableViewCellContentView>
-                                                    </tableViewCell>
-                                                </prototypes>
-                                            </tableView>
+                                                <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="SpZ-dC-RK0" secondAttribute="trailing" constant="20" id="6Ux-F7-uyX"/>
+                                                    <constraint firstAttribute="trailing" secondItem="7H3-BP-7vO" secondAttribute="trailing" constant="18" id="Dif-Pp-RHL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="F4W-tJ-1on" secondAttribute="trailing" constant="18" id="JGZ-Lk-qhA"/>
+                                                    <constraint firstItem="F4W-tJ-1on" firstAttribute="top" secondItem="na8-xU-MPv" secondAttribute="top" constant="20" id="Nac-oo-ecz"/>
+                                                    <constraint firstAttribute="trailing" secondItem="aSh-bB-U89" secondAttribute="trailing" constant="10" id="TUo-cH-wRa"/>
+                                                    <constraint firstItem="F4W-tJ-1on" firstAttribute="leading" secondItem="na8-xU-MPv" secondAttribute="leading" constant="18" id="Vjn-bd-isa"/>
+                                                    <constraint firstItem="SpZ-dC-RK0" firstAttribute="top" secondItem="7H3-BP-7vO" secondAttribute="bottom" constant="10" id="i6P-9a-Dv4"/>
+                                                    <constraint firstItem="SpZ-dC-RK0" firstAttribute="leading" secondItem="na8-xU-MPv" secondAttribute="leading" constant="20" id="jgi-xg-c5M"/>
+                                                    <constraint firstItem="aSh-bB-U89" firstAttribute="top" secondItem="na8-xU-MPv" secondAttribute="top" constant="12" id="rzu-uq-zOD"/>
+                                                    <constraint firstItem="7H3-BP-7vO" firstAttribute="leading" secondItem="na8-xU-MPv" secondAttribute="leading" constant="18" id="sBP-cq-q5B"/>
+                                                    <constraint firstItem="7H3-BP-7vO" firstAttribute="top" secondItem="F4W-tJ-1on" secondAttribute="bottom" constant="7" id="tD4-6I-a54"/>
+                                                    <constraint firstAttribute="width" secondItem="na8-xU-MPv" secondAttribute="height" multiplier="1:0.45" id="vqI-JS-he8"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="데이터 출처" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Fn-mi-Oww">
+                                                <rect key="frame" x="18" y="879" width="378" height="14"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
+                                                <color key="textColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="한국 환경 공단(에어코리아), 기상청" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K8V-lo-RKY">
+                                                <rect key="frame" x="18" y="898" width="378" height="14"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="267-aP-0sF"/>
+                                            <constraint firstAttribute="trailing" secondItem="na8-xU-MPv" secondAttribute="trailing" constant="18" id="26P-Ub-B3r"/>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="centerX" secondItem="Obs-RX-pQZ" secondAttribute="centerX" id="41e-Zv-hKi"/>
                                             <constraint firstAttribute="trailing" secondItem="Iwn-VJ-s65" secondAttribute="trailing" constant="18" id="4R8-tD-94f"/>
-                                            <constraint firstAttribute="bottom" secondItem="SIb-Vo-V2a" secondAttribute="bottom" id="9wK-kE-7vf"/>
-                                            <constraint firstItem="SIb-Vo-V2a" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" id="CyV-hI-XGr"/>
+                                            <constraint firstItem="1Fn-mi-Oww" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="EoF-V5-0aS"/>
+                                            <constraint firstItem="na8-xU-MPv" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="GTm-do-DQf"/>
+                                            <constraint firstAttribute="trailing" secondItem="1Fn-mi-Oww" secondAttribute="trailing" constant="18" id="HHq-HN-8YH"/>
                                             <constraint firstItem="Iwn-VJ-s65" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="MLo-6G-4Mc"/>
                                             <constraint firstItem="Iwn-VJ-s65" firstAttribute="top" secondItem="70C-bO-i5p" secondAttribute="bottom" constant="20" id="Mgl-EQ-SDe"/>
+                                            <constraint firstItem="na8-xU-MPv" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="bottom" constant="20" id="P3Y-P1-LQF"/>
                                             <constraint firstItem="jDK-lB-u8j" firstAttribute="top" secondItem="Obs-RX-pQZ" secondAttribute="top" constant="18" id="Q5i-eV-wzH"/>
-                                            <constraint firstAttribute="trailing" secondItem="SIb-Vo-V2a" secondAttribute="trailing" id="Sog-Wg-PYx"/>
+                                            <constraint firstAttribute="bottom" secondItem="1Fn-mi-Oww" secondAttribute="bottom" constant="36" id="VHh-ZC-0nc"/>
                                             <constraint firstAttribute="trailing" secondItem="jDK-lB-u8j" secondAttribute="trailing" constant="18" id="icE-HQ-JWe"/>
                                             <constraint firstAttribute="bottom" secondItem="jDK-lB-u8j" secondAttribute="bottom" constant="533" id="j5C-FJ-FsM"/>
-                                            <constraint firstItem="SIb-Vo-V2a" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="bottom" constant="20" id="pJJ-je-sJh"/>
+                                            <constraint firstItem="K8V-lo-RKY" firstAttribute="top" secondItem="1Fn-mi-Oww" secondAttribute="bottom" constant="5" id="mPu-qE-oxV"/>
+                                            <constraint firstAttribute="trailing" secondItem="K8V-lo-RKY" secondAttribute="trailing" constant="18" id="vGw-3m-B58"/>
+                                            <constraint firstItem="K8V-lo-RKY" firstAttribute="leading" secondItem="Obs-RX-pQZ" secondAttribute="leading" constant="18" id="w4O-Wb-qFR"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -268,7 +316,7 @@
                         <outlet property="goDetailButton" destination="vS5-rP-G22" id="LO0-ij-qQG"/>
                         <outlet property="graphView" destination="IE1-op-9cH" id="EFh-5l-0jN"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>
-                        <outlet property="ruleTableView" destination="SIb-Vo-V2a" id="s2s-If-bAr"/>
+                        <outlet property="weatherView" destination="na8-xU-MPv" id="0Y8-8H-mua"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TX-Px-hQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

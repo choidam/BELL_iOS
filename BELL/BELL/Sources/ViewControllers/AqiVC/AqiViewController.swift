@@ -27,7 +27,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
-    @IBOutlet weak var ruleTableView: UITableView!
+    @IBOutlet weak var weatherView: UIView!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
@@ -62,7 +62,6 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         
         self.aqiView.setViewShadow()
         self.chartWholeView.setViewShadow()
-//        self.ruleTableView.setViewShadow()
         
         self.graphView.setViewShadow()
         self.graphView.contentMode = .scaleAspectFit
@@ -80,7 +79,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    // 오류 처리
+    // MARK : 위치 받아오기 에러 처리
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -106,6 +105,10 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         if CLLocationManager.authorizationStatus() == .authorizedAlways || CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
             self.firstSetting()
         }
+        
+        self.weatherView.setGradientBackground(colorTop: UIColor.white, colorBottom: UIColor.skyblue)
+        self.weatherView.setViewShadow()
+        self.weatherView.layer.cornerRadius = 3
     }
     
     @IBAction func clickReloadButton(_ sender: UIButton) {
@@ -168,5 +171,5 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 self.EmojiImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
     }
-    
 }
+
