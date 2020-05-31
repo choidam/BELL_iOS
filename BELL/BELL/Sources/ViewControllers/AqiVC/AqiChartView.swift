@@ -75,7 +75,7 @@ class AqiChartView: MacawView {
         animations = items.enumerated().map { (i:Int, item:Group) in // i : index
             item.contentsVar.animation(delay: Double(i)*0.2) { t in // animation : left to right
                 let height = adjustedData[i]*t
-                let rect = Rect(x: Double(i)*50+20, y: 200-height, w: 20, h: height)
+                let rect = Rect(x: Double(i)*50+20, y: 200-height, w: 20, h: height).round(rx: 7, ry: 7)
                 
                 return [rect.fill(with: fill)]
             }

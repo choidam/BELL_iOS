@@ -27,6 +27,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
+    @IBOutlet weak var ruleTableView: UITableView!
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -60,6 +62,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         
         self.aqiView.setViewShadow()
         self.chartWholeView.setViewShadow()
+//        self.ruleTableView.setViewShadow()
         
         self.graphView.setViewShadow()
         self.graphView.contentMode = .scaleAspectFit
@@ -69,6 +72,12 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
+        
+        self.animateEmojiImage()
+        Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
+            self.animateEmojiImage()
+        })
+        
     }
     
     // 오류 처리
@@ -143,8 +152,21 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     // 더보기 페이지로 이동
     @IBAction func moveDetail(_ sender: UIButton) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") else { return }        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") else { return }
         self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func animateEmojiImage(){
+        self.EmojiImageView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        UIView.animate(
+            withDuration: 1.2,
+            delay: 0,
+            usingSpringWithDamping: 0.5,
+            initialSpringVelocity: 0.2,
+            options: .curveEaseOut,
+            animations: {
+                self.EmojiImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
+        }, completion: nil)
     }
     
 }
