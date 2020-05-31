@@ -9,3 +9,8 @@
 import Foundation
 import UIKit
 
+// aqi 지수 저장
+struct AqiBar {
+    var time: String
+    var aqiIndex: Double
+}

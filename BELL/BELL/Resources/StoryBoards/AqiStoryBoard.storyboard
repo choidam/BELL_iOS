@@ -164,10 +164,10 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Iwn-VJ-s65">
-                                                <rect key="frame" x="18" y="416" width="378" height="340"/>
+                                                <rect key="frame" x="18" y="416" width="378" height="227"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IE1-op-9cH" customClass="AqiChartView" customModule="BELL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="378" height="290"/>
+                                                        <rect key="frame" x="0.0" y="50" width="378" height="177"/>
                                                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     </view>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지 현황" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fGY-nv-cUy">
@@ -182,6 +182,9 @@
                                                         <state key="normal" title="더보기 &gt;">
                                                             <color key="titleColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="moveDetail:" destination="fcm-EQ-1A6" eventType="touchUpInside" id="h5L-Ga-M8m"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -196,7 +199,7 @@
                                                     <constraint firstItem="vS5-rP-G22" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="top" constant="12" id="p5a-9f-bpF"/>
                                                     <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="vS5-rP-G22" secondAttribute="bottom" constant="11" id="pOk-sj-4zO"/>
                                                     <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="Iwn-VJ-s65" secondAttribute="top" constant="50" id="vRf-6c-F1e"/>
-                                                    <constraint firstAttribute="width" secondItem="Iwn-VJ-s65" secondAttribute="height" multiplier="1:0.9" id="xho-Sc-UeL"/>
+                                                    <constraint firstAttribute="width" secondItem="Iwn-VJ-s65" secondAttribute="height" multiplier="1:0.6" id="xho-Sc-UeL"/>
                                                     <constraint firstItem="IE1-op-9cH" firstAttribute="top" secondItem="fGY-nv-cUy" secondAttribute="bottom" constant="15" id="ymk-sa-KT7"/>
                                                 </constraints>
                                             </view>
@@ -244,6 +247,7 @@
                         <outlet property="aqiStatusSmallLabel" destination="bQz-43-jPo" id="bST-5p-ihT"/>
                         <outlet property="aqiView" destination="jDK-lB-u8j" id="ttb-Af-aUI"/>
                         <outlet property="chartWholeView" destination="Iwn-VJ-s65" id="3AB-kW-YRo"/>
+                        <outlet property="goDetailButton" destination="vS5-rP-G22" id="LO0-ij-qQG"/>
                         <outlet property="graphView" destination="IE1-op-9cH" id="EFh-5l-0jN"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>
                     </connections>
@@ -251,6 +255,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5TX-Px-hQj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3389.8550724637685" y="137.94642857142856"/>
+        </scene>
+        <!--Aqi Detail View Controller-->
+        <scene sceneID="s3D-xc-age">
+            <objects>
+                <viewController storyboardIdentifier="AqiDetailViewController" id="zYG-ug-hxv" customClass="AqiDetailViewController" customModule="BELL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="me2-yx-yYz">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="VUS-WY-M9V"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vzi-HB-qB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4181" y="129"/>
         </scene>
         <!--AQI-->
         <scene sceneID="2Eo-KO-ues">

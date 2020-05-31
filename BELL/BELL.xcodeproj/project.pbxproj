@@ -25,6 +25,7 @@
 		B68AF2FF247D927A00C33FC9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF2FE247D927A00C33FC9 /* MapViewController.swift */; };
 		B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF300247D928700C33FC9 /* AqiViewController.swift */; };
 		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
+		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		B68AF300247D928700C33FC9 /* AqiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiViewController.swift; sourceTree = "<group>"; };
 		B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
+		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -188,11 +190,20 @@
 		B68556CE245F4C7500742344 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6ECC37D2483855800EB7142 /* AqiDetailVC */,
 				B64D52CE247FBC69001B35C3 /* MainVC */,
 				B64D52CD247FBC5E001B35C3 /* MapVC */,
 				B64D52CC247FBB3F001B35C3 /* AqiVC */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B6ECC37D2483855800EB7142 /* AqiDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */,
+			);
+			path = AqiDetailVC;
 			sourceTree = "<group>";
 		};
 		B93385885D3763B81D441359 /* Pods */ = {
@@ -329,6 +340,7 @@
 				B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */,
 				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
+				B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */,
 				B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,
 				B68556B5245E86FD00742344 /* SceneDelegate.swift in Sources */,

@@ -22,6 +22,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var aqiStatusSmallLabel: UILabel!
     @IBOutlet weak var EmojiImageView: UIImageView!
     
+    @IBOutlet weak var goDetailButton: UIButton! // 더보기 버튼
+    
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
@@ -137,6 +139,12 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 }
             }
         })
+    }
+    
+    // 더보기 페이지로 이동
+    @IBAction func moveDetail(_ sender: UIButton) {
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") else { return }        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
