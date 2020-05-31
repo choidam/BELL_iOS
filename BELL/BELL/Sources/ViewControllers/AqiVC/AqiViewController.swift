@@ -29,6 +29,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var weatherView: UIView!
     
+    var aqiDataSet = [AqiResponseString]()
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -148,6 +150,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 if let area: String = address.last?.locality{
                     print("findaddress : ", area) // 서대문구
+                    self.connectAqiAPI(region: area)
                 }
             }
         })
@@ -170,6 +173,27 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             animations: {
                 self.EmojiImageView.transform = CGAffineTransform(scaleX: 1, y: 1)
         }, completion: nil)
+    }
+    
+    // MARK : 미세먼지 API 연결
+    func connectAqiAPI(region: String){
+        let aqiURLString = AqiService.shared.makeAqiAddress(region: region)
+        let aqiURL = URL(string: aqiURLString)!
+        
+        do {
+            let responseString = try String(contentsOf: aqiURL)
+            guard let data = responseString.data(using: .utf8) else { return }
+            let decoder = JSONDecoder()
+            if let object = try? decoder.decode(AqiResponseString.self, from: data) {
+                self.aqiDataSet = [object] as! [AqiResponseString]
+//                self.misaeLabel.text = self.aqiDataSet[0].list![0].pm25Value
+//                self.dateLabel.text = self.aqiDataSet[0].list![0].dataTime
+                print(self.aqiDataSet[0].list![0].pm25Value)
+                print(self.aqiDataSet[0].list![0].dataTime)
+            }
+        } catch let e as NSError {
+            print(e.localizedDescription)
+        }
     }
 }
 

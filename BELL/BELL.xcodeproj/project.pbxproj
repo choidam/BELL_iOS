@@ -17,7 +17,7 @@
 		B68556BA245E86FD00742344 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556B8245E86FD00742344 /* Main.storyboard */; };
 		B68556BC245E86FE00742344 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B68556BB245E86FE00742344 /* Assets.xcassets */; };
 		B68556BF245E86FE00742344 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556BD245E86FE00742344 /* LaunchScreen.storyboard */; };
-		B68556CA245F4C2600742344 /* ResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556C9245F4C2600742344 /* ResponseString.swift */; };
+		B68556CA245F4C2600742344 /* AqiResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556C9245F4C2600742344 /* AqiResponseString.swift */; };
 		B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556CF245F4CAB00742344 /* UIColor+Extensions.swift */; };
 		B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68556D1245F4CBA00742344 /* AqiBar.swift */; };
 		B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */; };
@@ -26,6 +26,7 @@
 		B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF300247D928700C33FC9 /* AqiViewController.swift */; };
 		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
 		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
+		B6ECC381248423C500EB7142 /* AqiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC380248423C500EB7142 /* AqiService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,7 +43,7 @@
 		B68556BB245E86FE00742344 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B68556BE245E86FE00742344 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B68556C0245E86FE00742344 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		B68556C9245F4C2600742344 /* ResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseString.swift; sourceTree = "<group>"; };
+		B68556C9245F4C2600742344 /* AqiResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiResponseString.swift; sourceTree = "<group>"; };
 		B68556CF245F4CAB00742344 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		B68556D1245F4CBA00742344 /* AqiBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiBar.swift; sourceTree = "<group>"; };
 		B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AqiStoryBoard.storyboard; sourceTree = "<group>"; };
@@ -52,6 +53,7 @@
 		B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
 		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
+		B6ECC380248423C500EB7142 /* AqiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,7 +145,8 @@
 		B68556C7245F4C0300742344 /* APIService */ = {
 			isa = PBXGroup;
 			children = (
-				B68556C9245F4C2600742344 /* ResponseString.swift */,
+				B68556C9245F4C2600742344 /* AqiResponseString.swift */,
+				B6ECC380248423C500EB7142 /* AqiService.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -335,8 +338,9 @@
 				B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */,
 				B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
-				B68556CA245F4C2600742344 /* ResponseString.swift in Sources */,
+				B68556CA245F4C2600742344 /* AqiResponseString.swift in Sources */,
 				B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */,
+				B6ECC381248423C500EB7142 /* AqiService.swift in Sources */,
 				B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */,
 				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
