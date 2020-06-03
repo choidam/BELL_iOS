@@ -49,13 +49,13 @@
                                                                         <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음  27㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-Vh-cFz">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- ㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-Vh-cFz">
                                                                         <rect key="frame" x="10" y="52" width="168.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음  27㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-v9-MrF">
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- ㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wpD-v9-MrF">
                                                                         <rect key="frame" x="199.5" y="52" width="168.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                         <nil key="textColor"/>
@@ -315,6 +315,8 @@
                         <outlet property="chartWholeView" destination="Iwn-VJ-s65" id="3AB-kW-YRo"/>
                         <outlet property="goDetailButton" destination="vS5-rP-G22" id="LO0-ij-qQG"/>
                         <outlet property="graphView" destination="IE1-op-9cH" id="EFh-5l-0jN"/>
+                        <outlet property="pm10Label" destination="HbF-Vh-cFz" id="lfx-9X-Dm3"/>
+                        <outlet property="pm25Label" destination="wpD-v9-MrF" id="YJX-Oz-v4C"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>
                         <outlet property="weatherView" destination="na8-xU-MPv" id="0Y8-8H-mua"/>
                     </connections>

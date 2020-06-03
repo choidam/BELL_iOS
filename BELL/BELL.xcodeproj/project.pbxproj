@@ -27,6 +27,7 @@
 		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
 		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
 		B6ECC381248423C500EB7142 /* AqiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC380248423C500EB7142 /* AqiService.swift */; };
+		B6ECC38A2484529B00EB7142 /* WeatherResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
 		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
 		B6ECC380248423C500EB7142 /* AqiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiService.swift; sourceTree = "<group>"; };
+		B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseString.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 			children = (
 				B68556C9245F4C2600742344 /* AqiResponseString.swift */,
 				B6ECC380248423C500EB7142 /* AqiService.swift */,
+				B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ECC38A2484529B00EB7142 /* WeatherResponseString.swift in Sources */,
 				B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */,
 				B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,

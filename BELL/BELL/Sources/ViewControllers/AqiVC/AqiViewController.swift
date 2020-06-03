@@ -24,12 +24,17 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var goDetailButton: UIButton! // 더보기 버튼
     
+    
+    @IBOutlet weak var pm10Label: UILabel!
+    @IBOutlet weak var pm25Label: UILabel!
+    
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
     @IBOutlet weak var weatherView: UIView!
     
-    var aqiDataSet = [AqiResponseString]()
+    var aqiDataSet = [AqiResponseString]() // aqi dataset
+    var weatherDataSet = [WeatherResponseString]() // weather dataset
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
@@ -151,6 +156,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 if let area: String = address.last?.locality{
                     print("findaddress : ", area) // 서대문구
                     self.connectAqiAPI(region: area)
+                    self.connectWeatherAPI()
                 }
             }
         })
@@ -186,14 +192,62 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             let decoder = JSONDecoder()
             if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 self.aqiDataSet = [object] as! [AqiResponseString]
-//                self.misaeLabel.text = self.aqiDataSet[0].list![0].pm25Value
-//                self.dateLabel.text = self.aqiDataSet[0].list![0].dataTime
-                print(self.aqiDataSet[0].list![0].pm25Value)
-                print(self.aqiDataSet[0].list![0].dataTime)
+                let pm10Val: String = self.aqiDataSet[0].list![0].pm10Value ?? ""
+                let pm25Val: String = self.aqiDataSet[0].list![0].pm25Value ?? ""
+                self.pm10Label.text = self.getPm10String(pm10: pm10Val) + " " + pm10Val + " ㎍/㎥"
+                self.pm25Label.text = self.getPm25String(pm25: pm25Val) + " " + pm25Val + " ㎍/㎥"
             }
         } catch let e as NSError {
             print(e.localizedDescription)
         }
     }
+    
+    // MARK : 날씨 API 연결
+    func connectWeatherAPI(){
+        var lat: String = String(format: "%.6f", currentLocation.coordinate.latitude)
+        var lon: String = String(format: "%.6f", currentLocation.coordinate.longitude)
+        
+        let weatherURLStirng = AqiService.shared.makeWeatherAddrress(lat: lat, lon: lon)
+        print(weatherURLStirng)
+        
+        let weatherURL = URL(string: weatherURLStirng)!
+        
+    }
+    
+    // MARK : 미세먼지 수치에 따른 기준 (pm10)
+    func getPm10String(pm10: String) -> String {
+        
+        guard let pm10Int = Int(pm10) else { return "정보 없음" }
+        var pm10Str: String = ""
+        
+        switch pm10Int {
+        case let x where x <= 30 :
+            pm10Str = "좋음"
+        case let x where x <= 80 :
+            pm10Str = "보통"
+        case let x where x <= 150 :
+            pm10Str = "나쁨"
+        default:
+            pm10Str = "매우 나쁨"
+        }
+        return pm10Str
+    }
+    
+    // MARK : 초미세먼지 수치에 따른 기준 (pm25)
+    func getPm25String(pm25: String) -> String {
+        guard let pm25Int = Int(pm25) else { return "정보 없음" }
+        var pm25Str: String = ""
+        
+        switch pm25Int {
+        case let x where x <= 15:
+            pm25Str = "좋음"
+        case let x where x <= 35 :
+            pm25Str = "보통"
+        case let x where x <= 75 :
+            pm25Str = "나쁨"
+        default:
+            pm25Str = "매우 나쁨"
+        }
+        return pm25Str
+    }
 }
-
