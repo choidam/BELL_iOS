@@ -44,7 +44,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
-    // 위치 허용 선택했을 때 처리
+    // MARK : 위치 허용 선택했을 때 처리
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined :
@@ -84,6 +84,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
             self.animateEmojiImage()
         })
+        
+        self.connectWeatherAPI()
     }
     
     // MARK : 위치 받아오기 에러 처리
@@ -153,7 +155,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 if let area: String = address.last?.locality{
                     print("findaddress : ", area) // 서대문구
-                    self.connectAqiAPI(region: area)
+                    self.connectAqiAPI(region: area) // 미세먼지 API 연결
                 }
             }
         })
@@ -201,9 +203,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 self.pm10Label.text = self.getPm10String(pm10: pm10Val) + " " + pm10Val + " ㎍/㎥"
                 self.pm25Label.text = self.getPm25String(pm25: pm25Val) + " " + pm25Val + " ㎍/㎥"
                 
-                
                 AqiChartView.playAnimations()
-                
             }
         } catch let e as NSError {
             print(e.localizedDescription)
@@ -212,14 +212,23 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK : 날씨 API 연결
     func connectWeatherAPI(){
-        var lat: String = String(format: "%.6f", currentLocation.coordinate.latitude)
-        var lon: String = String(format: "%.6f", currentLocation.coordinate.longitude)
+        let weatherURLString = "https://api.waqi.info/feed/here/?token=42449a98a32888268828e3059c4489aef7625391"
+        let weatherURL = URL(string: weatherURLString)!
         
-        let weatherURLStirng = AqiService.shared.makeWeatherAddrress(lat: lat, lon: lon)
-        print(weatherURLStirng)
-        
-        let weatherURL = URL(string: weatherURLStirng)!
-        
+        do {
+            let weatherResponse = try String(contentsOf: weatherURL)
+//            print(weatherResponse)
+            guard let weatherData = weatherResponse.data(using: .utf8) else { return }
+            print("data???", weatherData)
+            let weatherDecoder = JSONDecoder()
+            
+            if let weatherObject = try? weatherDecoder.decode(WeatherResponseString.self, from: weatherData) {
+                print("object?? ", weatherObject)
+            }
+            
+        } catch let e as NSError {
+            print(e.localizedDescription)
+        }
     }
     
     // MARK : 미세먼지 수치에 따른 기준 (pm10)

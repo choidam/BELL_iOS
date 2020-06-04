@@ -7,25 +7,15 @@ import Foundation
 
 // MARK: - WeatherResponseString
 struct WeatherResponseString: Codable {
-    let coord: Coord?
-    let weather: [Weather]?
-    let base: String?
-    let main: Main?
-    let visibility: Int?
-    let wind: Wind?
-    let clouds: Clouds?
-    let dt: Int?
-    let sys: Sys?
-    let timezone, id: Int?
-    let name: String?
-    let cod: Int?
+    var status: String?
+    var data: DataClass?
 }
 
 // MARK: WeatherResponseString convenience initializers and mutators
 
 extension WeatherResponseString {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(WeatherResponseString.self, from: data)
+        self = try newJSONDecoder2().decode(WeatherResponseString.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -40,39 +30,122 @@ extension WeatherResponseString {
     }
 
     func with(
-        coord: Coord?? = nil,
-        weather: [Weather]?? = nil,
-        base: String?? = nil,
-        main: Main?? = nil,
-        visibility: Int?? = nil,
-        wind: Wind?? = nil,
-        clouds: Clouds?? = nil,
-        dt: Int?? = nil,
-        sys: Sys?? = nil,
-        timezone: Int?? = nil,
-        id: Int?? = nil,
-        name: String?? = nil,
-        cod: Int?? = nil
+        status: String?? = nil,
+        data: DataClass?? = nil
     ) -> WeatherResponseString {
         return WeatherResponseString(
-            coord: coord ?? self.coord,
-            weather: weather ?? self.weather,
-            base: base ?? self.base,
-            main: main ?? self.main,
-            visibility: visibility ?? self.visibility,
-            wind: wind ?? self.wind,
-            clouds: clouds ?? self.clouds,
-            dt: dt ?? self.dt,
-            sys: sys ?? self.sys,
-            timezone: timezone ?? self.timezone,
-            id: id ?? self.id,
+            status: status ?? self.status,
+            data: data ?? self.data
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder2().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - DataClass
+struct DataClass: Codable {
+    var aqi, idx: Int?
+    var attributions: [Attribution]?
+    var city: City?
+    var dominentpol: String?
+    var iaqi: Iaqi?
+    var time: Time?
+    var debug: Debug?
+}
+
+// MARK: DataClass convenience initializers and mutators
+
+extension DataClass {
+    init(data: Data) throws {
+        self = try newJSONDecoder2().decode(DataClass.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        aqi: Int?? = nil,
+        idx: Int?? = nil,
+        attributions: [Attribution]?? = nil,
+        city: City?? = nil,
+        dominentpol: String?? = nil,
+        iaqi: Iaqi?? = nil,
+        time: Time?? = nil,
+        debug: Debug?? = nil
+    ) -> DataClass {
+        return DataClass(
+            aqi: aqi ?? self.aqi,
+            idx: idx ?? self.idx,
+            attributions: attributions ?? self.attributions,
+            city: city ?? self.city,
+            dominentpol: dominentpol ?? self.dominentpol,
+            iaqi: iaqi ?? self.iaqi,
+            time: time ?? self.time,
+            debug: debug ?? self.debug
+        )
+    }
+
+    func jsonData() throws -> Data {
+        return try newJSONEncoder2().encode(self)
+    }
+
+    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
+        return String(data: try self.jsonData(), encoding: encoding)
+    }
+}
+
+// MARK: - Attribution
+struct Attribution: Codable {
+    var url: String?
+    var name, logo: String?
+}
+
+// MARK: Attribution convenience initializers and mutators
+
+extension Attribution {
+    init(data: Data) throws {
+        self = try newJSONDecoder2().decode(Attribution.self, from: data)
+    }
+
+    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
+        guard let data = json.data(using: encoding) else {
+            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
+        }
+        try self.init(data: data)
+    }
+
+    init(fromURL url: URL) throws {
+        try self.init(data: try Data(contentsOf: url))
+    }
+
+    func with(
+        url: String?? = nil,
+        name: String?? = nil,
+        logo: String?? = nil
+    ) -> Attribution {
+        return Attribution(
+            url: url ?? self.url,
             name: name ?? self.name,
-            cod: cod ?? self.cod
+            logo: logo ?? self.logo
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -80,16 +153,18 @@ extension WeatherResponseString {
     }
 }
 
-// MARK: - Clouds
-struct Clouds: Codable {
-    let all: Int?
+// MARK: - City
+struct City: Codable {
+    var geo: [Double]?
+    var name: String?
+    var url: String?
 }
 
-// MARK: Clouds convenience initializers and mutators
+// MARK: City convenience initializers and mutators
 
-extension Clouds {
+extension City {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Clouds.self, from: data)
+        self = try newJSONDecoder2().decode(City.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -104,15 +179,19 @@ extension Clouds {
     }
 
     func with(
-        all: Int?? = nil
-    ) -> Clouds {
-        return Clouds(
-            all: all ?? self.all
+        geo: [Double]?? = nil,
+        name: String?? = nil,
+        url: String?? = nil
+    ) -> City {
+        return City(
+            geo: geo ?? self.geo,
+            name: name ?? self.name,
+            url: url ?? self.url
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -120,16 +199,16 @@ extension Clouds {
     }
 }
 
-// MARK: - Coord
-struct Coord: Codable {
-    let lon, lat: Double?
+// MARK: - Debug
+struct Debug: Codable {
+    var sync: Date?
 }
 
-// MARK: Coord convenience initializers and mutators
+// MARK: Debug convenience initializers and mutators
 
-extension Coord {
+extension Debug {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Coord.self, from: data)
+        self = try newJSONDecoder2().decode(Debug.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -144,17 +223,15 @@ extension Coord {
     }
 
     func with(
-        lon: Double?? = nil,
-        lat: Double?? = nil
-    ) -> Coord {
-        return Coord(
-            lon: lon ?? self.lon,
-            lat: lat ?? self.lat
+        sync: Date?? = nil
+    ) -> Debug {
+        return Debug(
+            sync: sync ?? self.sync
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -162,25 +239,18 @@ extension Coord {
     }
 }
 
-// MARK: - Main
-struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double?
-    let pressure, humidity: Int?
-
-    enum CodingKeys: String, CodingKey {
-        case temp
-        case feelsLike
-        case tempMin
-        case tempMax
-        case pressure, humidity
-    }
+// MARK: - Iaqi
+struct Iaqi: Codable {
+    var co, h, no2, o3: Co?
+    var p, pm10, pm25, r: Co?
+    var so2, t, w, wd: Co?
 }
 
-// MARK: Main convenience initializers and mutators
+// MARK: Iaqi convenience initializers and mutators
 
-extension Main {
+extension Iaqi {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Main.self, from: data)
+        self = try newJSONDecoder2().decode(Iaqi.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -195,25 +265,37 @@ extension Main {
     }
 
     func with(
-        temp: Double?? = nil,
-        feelsLike: Double?? = nil,
-        tempMin: Double?? = nil,
-        tempMax: Double?? = nil,
-        pressure: Int?? = nil,
-        humidity: Int?? = nil
-    ) -> Main {
-        return Main(
-            temp: temp ?? self.temp,
-            feelsLike: feelsLike ?? self.feelsLike,
-            tempMin: tempMin ?? self.tempMin,
-            tempMax: tempMax ?? self.tempMax,
-            pressure: pressure ?? self.pressure,
-            humidity: humidity ?? self.humidity
+        co: Co?? = nil,
+        h: Co?? = nil,
+        no2: Co?? = nil,
+        o3: Co?? = nil,
+        p: Co?? = nil,
+        pm10: Co?? = nil,
+        pm25: Co?? = nil,
+        r: Co?? = nil,
+        so2: Co?? = nil,
+        t: Co?? = nil,
+        w: Co?? = nil,
+        wd: Co?? = nil
+    ) -> Iaqi {
+        return Iaqi(
+            co: co ?? self.co,
+            h: h ?? self.h,
+            no2: no2 ?? self.no2,
+            o3: o3 ?? self.o3,
+            p: p ?? self.p,
+            pm10: pm10 ?? self.pm10,
+            pm25: pm25 ?? self.pm25,
+            r: r ?? self.r,
+            so2: so2 ?? self.so2,
+            t: t ?? self.t,
+            w: w ?? self.w,
+            wd: wd ?? self.wd
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -221,18 +303,16 @@ extension Main {
     }
 }
 
-// MARK: - Sys
-struct Sys: Codable {
-    let type, id: Int?
-    let country: String?
-    let sunrise, sunset: Int?
+// MARK: - Co
+struct Co: Codable {
+    var v: Double?
 }
 
-// MARK: Sys convenience initializers and mutators
+// MARK: Co convenience initializers and mutators
 
-extension Sys {
+extension Co {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Sys.self, from: data)
+        self = try newJSONDecoder2().decode(Co.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -247,23 +327,15 @@ extension Sys {
     }
 
     func with(
-        type: Int?? = nil,
-        id: Int?? = nil,
-        country: String?? = nil,
-        sunrise: Int?? = nil,
-        sunset: Int?? = nil
-    ) -> Sys {
-        return Sys(
-            type: type ?? self.type,
-            id: id ?? self.id,
-            country: country ?? self.country,
-            sunrise: sunrise ?? self.sunrise,
-            sunset: sunset ?? self.sunset
+        v: Double?? = nil
+    ) -> Co {
+        return Co(
+            v: v ?? self.v
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -271,23 +343,17 @@ extension Sys {
     }
 }
 
-// MARK: - Weather
-struct Weather: Codable {
-    let id: Int?
-    let main, weatherDescription, icon: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id, main
-        case weatherDescription
-        case icon
-    }
+// MARK: - Time
+struct Time: Codable {
+    var s, tz: String?
+    var v: Int?
 }
 
-// MARK: Weather convenience initializers and mutators
+// MARK: Time convenience initializers and mutators
 
-extension Weather {
+extension Time {
     init(data: Data) throws {
-        self = try newJSONDecoder().decode(Weather.self, from: data)
+        self = try newJSONDecoder2().decode(Time.self, from: data)
     }
 
     init(_ json: String, using encoding: String.Encoding = .utf8) throws {
@@ -302,64 +368,19 @@ extension Weather {
     }
 
     func with(
-        id: Int?? = nil,
-        main: String?? = nil,
-        weatherDescription: String?? = nil,
-        icon: String?? = nil
-    ) -> Weather {
-        return Weather(
-            id: id ?? self.id,
-            main: main ?? self.main,
-            weatherDescription: weatherDescription ?? self.weatherDescription,
-            icon: icon ?? self.icon
+        s: String?? = nil,
+        tz: String?? = nil,
+        v: Int?? = nil
+    ) -> Time {
+        return Time(
+            s: s ?? self.s,
+            tz: tz ?? self.tz,
+            v: v ?? self.v
         )
     }
 
     func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
-    }
-
-    func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
-        return String(data: try self.jsonData(), encoding: encoding)
-    }
-}
-
-// MARK: - Wind
-struct Wind: Codable {
-    let speed: Double?
-    let deg: Int?
-}
-
-// MARK: Wind convenience initializers and mutators
-
-extension Wind {
-    init(data: Data) throws {
-        self = try newJSONDecoder().decode(Wind.self, from: data)
-    }
-
-    init(_ json: String, using encoding: String.Encoding = .utf8) throws {
-        guard let data = json.data(using: encoding) else {
-            throw NSError(domain: "JSONDecoding", code: 0, userInfo: nil)
-        }
-        try self.init(data: data)
-    }
-
-    init(fromURL url: URL) throws {
-        try self.init(data: try Data(contentsOf: url))
-    }
-
-    func with(
-        speed: Double?? = nil,
-        deg: Int?? = nil
-    ) -> Wind {
-        return Wind(
-            speed: speed ?? self.speed,
-            deg: deg ?? self.deg
-        )
-    }
-
-    func jsonData() throws -> Data {
-        return try newJSONEncoder().encode(self)
+        return try newJSONEncoder2().encode(self)
     }
 
     func jsonString(encoding: String.Encoding = .utf8) throws -> String? {
@@ -369,19 +390,19 @@ extension Wind {
 
 // MARK: - Helper functions for creating encoders and decoders
 
-//func newJSONDecoder() -> JSONDecoder {
-//    let decoder = JSONDecoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        decoder.dateDecodingStrategy = .iso8601
-//    }
-//    return decoder
-//}
-//
-//func newJSONEncoder() -> JSONEncoder {
-//    let encoder = JSONEncoder()
-//    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
-//        encoder.dateEncodingStrategy = .iso8601
-//    }
-//    return encoder
-//}
-//
+func newJSONDecoder2() -> JSONDecoder {
+    let decoder = JSONDecoder()
+    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
+        decoder.dateDecodingStrategy = .iso8601
+    }
+    return decoder
+}
+
+func newJSONEncoder2() -> JSONEncoder {
+    let encoder = JSONEncoder()
+    if #available(iOS 10.0, OSX 10.12, tvOS 10.0, watchOS 3.0, *) {
+        encoder.dateEncodingStrategy = .iso8601
+    }
+    return encoder
+}
+

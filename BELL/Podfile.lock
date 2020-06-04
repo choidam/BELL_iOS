@@ -1,20 +1,24 @@
 PODS:
+  - FloatingPanel (1.7.5)
   - Macaw (0.9.6):
     - SWXMLHash
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
+  - FloatingPanel
   - Macaw (= 0.9.6)
 
 SPEC REPOS:
   trunk:
+    - FloatingPanel
     - Macaw
     - SWXMLHash
 
 SPEC CHECKSUMS:
+  FloatingPanel: bb17fd6fc7ae519f877f7bd30f4f6115a78acf07
   Macaw: 8306d775625ba003beee4186b9533fd7cf284024
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 627c49bf178f966564a194297cd61e3dfc53bdd5
+PODFILE CHECKSUM: 774b2e257b2435c58073afef795f479215c0630e
 
 COCOAPODS: 1.9.1

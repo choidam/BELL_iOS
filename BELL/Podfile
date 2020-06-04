@@ -7,6 +7,6 @@ target 'BELL' do
 
   # Pods for BELL
   pod "Macaw", "0.9.6"
-
+  pod 'FloatingPanel'
 
 end

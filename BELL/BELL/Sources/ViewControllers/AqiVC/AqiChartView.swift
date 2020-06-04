@@ -89,7 +89,7 @@ class AqiChartView: MacawView {
     static func playAnimations(){
         // reload aqi data
         AqiChartView.aqiBars = createData()
-        print(AqiChartView.aqiBars)
+//        print(AqiChartView.aqiBars)
         
         animations.combine().play()
     }
