@@ -10,16 +10,16 @@ import UIKit
 import MapKit
 import CoreLocation
 
-class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate {
+class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var searchTextField: UITextField! // 지역 검색 text field
     
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
     @IBOutlet weak var InfoView: UIView! // 미세먼지 정보 view
     @IBOutlet weak var locationButton: UIButton!
-    
     
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var addressDetailLabel: UILabel!
@@ -74,8 +74,19 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.locationButton.clipsToBounds = true
         self.locationButton.layer.cornerRadius = 10
         
+        let tapGesture: UITapGestureRecognizer = UITapGestureRecognizer()
+        tapGesture.delegate = self
+        
+        self.view.addGestureRecognizer(tapGesture)
     }
     
+    // MARK : tap gesture
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+        self.view.endEditing(true)
+        return true
+    }
+    
+    // MARK : 원래 내 위치로 되돌아가기
     @IBAction func clickLocationButton(_ sender: UIButton) {
         self.mapView.showsUserLocation = true
         self.mapView.setUserTrackingMode(.follow, animated: true)
@@ -140,7 +151,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         })
     }
     
-    // MARK : 미세먼지 API 연결
+    // MARK : 미세먼지 조회를 원하는 지역 검색
+    @IBAction func clickSearchButton(_ sender: UIButton) {
+        self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+        self.addressLabel.text = self.searchTextField.text
+        self.searchTextField.text = ""
+        
+        // TODO : MAP View 의 위치를 내가 검색한 위치로 옮기기, 상세 위치 알아오기
+        
+    }
+    
+    // MARK : 미세먼지 API 연결 + 미세먼지 수치 뷰에 그리기
     func connectAqiAPI(region: String){
         let aqiURLString = AqiService.shared.makeAqiAddress(region: region)
         let aqiURL = URL(string: aqiURLString)!
@@ -152,7 +173,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 self.aqiDataSet = [object] as! [AqiResponseString]
                 let aqi10Str = self.getPm10String(pm10: self.aqiDataSet[0].list![0].pm10Value!)
-                self.aqiStatusLabel.text = "이곳의 공기 상태는 " + aqi10Str + "입니다."
+                self.aqiStatusLabel.text = region + "의 공기 상태는 " + aqi10Str + "입니다."
                 self.timeLabel.text = self.aqiDataSet[0].list![0].dataTime! + " 기준"
             }
         } catch let e as NSError {

@@ -137,8 +137,6 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     // MARK : find location and address
     func firstSetting(){
         self.currentLocation = locationManager.location
-        print(self.currentLocation.coordinate.latitude)
-        print(self.currentLocation.coordinate.longitude)
         self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
     }
     
@@ -151,11 +149,10 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let address: [CLPlacemark] = placemarks {
                 if let name: String = address.last?.name {
-                    self.addressLabel.text = name // 남가좌동 50-3
+                    self.addressLabel.text = name
                 }
                 if let area: String = address.last?.locality{
-                    print("findaddress : ", area) // 서대문구
-                    self.connectAqiAPI(region: area) // 미세먼지 API 연결
+                    self.connectAqiAPI(region: area)
                 }
             }
         })
@@ -217,7 +214,6 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         
         do {
             let weatherResponse = try String(contentsOf: weatherURL)
-//            print(weatherResponse)
             guard let weatherData = weatherResponse.data(using: .utf8) else { return }
             print("data???", weatherData)
             let weatherDecoder = JSONDecoder()
