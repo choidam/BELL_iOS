@@ -18,6 +18,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var currentLocation: CLLocation!
     
     @IBOutlet weak var InfoView: UIView! // 미세먼지 정보 view
+    @IBOutlet weak var locationButton: UIButton!
+    
+    
+    @IBOutlet weak var addressLabel: UILabel!
+    @IBOutlet weak var addressDetailLabel: UILabel!
+    @IBOutlet weak var aqiStatusLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
     
     var aqiDataSet = [AqiResponseString]() // aqi dataset
     
@@ -61,6 +68,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         locationManager.startUpdatingLocation()
         locationManager.startMonitoringSignificantLocationChanges()
         
+        self.InfoView.clipsToBounds = true
+        self.InfoView.layer.cornerRadius = 10
+        
+        self.locationButton.clipsToBounds = true
+        self.locationButton.layer.cornerRadius = 10
+        
+    }
+    
+    @IBAction func clickLocationButton(_ sender: UIButton) {
+        self.mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(.follow, animated: true)
     }
     
     // MARK : 위치 받아오기 에러 처리
@@ -107,13 +125,17 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         
         geocoder.reverseGeocodeLocation(findLocation, preferredLocale: locale, completionHandler: {(placemarks, error) in
             if let address: [CLPlacemark] = placemarks {
-                if let name: String = address.last?.name {
-                    //                    self.addressLabel.text = name // 남가좌동 50-3
-                }
+                var myAdd: String = ""
                 if let area: String = address.last?.locality{
-                    print("findaddress in map: ", area) // 서대문구
+                    myAdd += area
+                    self.addressLabel.text = area
                     self.connectAqiAPI(region: area) // 미세먼지 API 연결
                 }
+                if let name: String = address.last?.name {
+                    myAdd += " "
+                    myAdd += name
+                }
+                self.addressDetailLabel.text = myAdd
             }
         })
     }
@@ -129,15 +151,30 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             let decoder = JSONDecoder()
             if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 self.aqiDataSet = [object] as! [AqiResponseString]
-                print("@@@@")
-                print(self.aqiDataSet)
+                let aqi10Str = self.getPm10String(pm10: self.aqiDataSet[0].list![0].pm10Value!)
+                self.aqiStatusLabel.text = "이곳의 공기 상태는 " + aqi10Str + "입니다."
+                self.timeLabel.text = self.aqiDataSet[0].list![0].dataTime! + " 기준"
             }
         } catch let e as NSError {
             print(e.localizedDescription)
         }
     }
     
-    
-    
-    
+    // MARK : 미세먼지 수치에 따른 기준 (pm10)
+    func getPm10String(pm10: String) -> String {
+        guard let pm10Int = Int(pm10) else { return "정보 없음" }
+        var pm10Str: String = ""
+        
+        switch pm10Int {
+        case let x where x <= 30 :
+            pm10Str = "좋음"
+        case let x where x <= 80 :
+            pm10Str = "보통"
+        case let x where x <= 150 :
+            pm10Str = "나쁨"
+        default:
+            pm10Str = "매우 나쁨"
+        }
+        return pm10Str
+    }
 }
