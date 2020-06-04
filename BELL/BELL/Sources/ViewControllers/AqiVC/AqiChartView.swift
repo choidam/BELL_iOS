@@ -12,8 +12,9 @@ import Macaw
 
 class AqiChartView: MacawView {
     
-    static let aqiBars = createDummyData()
-    static let maxValue = 500
+    static var aqiBars = createData()
+    
+    static let maxValue = 200
     static let maxValueLineHeight = 200
     static let lineWidth: Double = 400
     
@@ -84,22 +85,34 @@ class AqiChartView: MacawView {
         return items.group()
     }
     
-    static func playAnimations(){ // not private (animation trigger)
+    // MARK : Animation Trigger
+    static func playAnimations(){
+        // reload aqi data
+        AqiChartView.aqiBars = createData()
+        print(AqiChartView.aqiBars)
+        
         animations.combine().play()
     }
-    
-    // set dummy data
-    private static func createDummyData() -> [AqiBar] {
         
-        let aqi1 = AqiBar(time: "13시", aqiIndex: 200)
-        let aqi2 = AqiBar(time: "14시", aqiIndex: 200)
-        let aqi3 = AqiBar(time: "15시", aqiIndex: 300)
-        let aqi4 = AqiBar(time: "16시", aqiIndex: 300)
-        let aqi5 = AqiBar(time: "17시", aqiIndex: 300)
-        let aqi6 = AqiBar(time: "18시", aqiIndex: 200)
-        let aqi7 = AqiBar(time: "19시", aqiIndex: 200)
-        let aqi8 = AqiBar(time: "20시", aqiIndex: 200)
+    // MARK : set Bar Data
+    static func createData() -> [AqiBar] {
+        var aqiBarList: [AqiBar] = []
         
-        return [aqi1, aqi2, aqi3, aqi4, aqi5, aqi6, aqi7, aqi8]
+        // connect to api
+        for aqiIdx in AqiViewController.aqiList {
+            let aqi = AqiBar(time: "14시", aqiIndex: aqiIdx)
+            aqiBarList.append(aqi)
+        }
+
+        // sample data (api 연동 안 할 경우)
+        if aqiBarList.count == 0 {
+            for i in 1...8 {
+                let aqi = AqiBar(time: "10시", aqiIndex: 50)
+                aqiBarList.append(aqi)
+            }
+        }
+        
+        return aqiBarList
     }
+
 }

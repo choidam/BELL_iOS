@@ -24,7 +24,6 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet weak var goDetailButton: UIButton! // 더보기 버튼
     
-    
     @IBOutlet weak var pm10Label: UILabel!
     @IBOutlet weak var pm25Label: UILabel!
     
@@ -35,6 +34,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     var aqiDataSet = [AqiResponseString]() // aqi dataset
     var weatherDataSet = [WeatherResponseString]() // weather dataset
+    
+    static var aqiList:[Double] = []
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
@@ -83,7 +84,6 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         Timer.scheduledTimer(withTimeInterval: 3, repeats: true, block: { _ in
             self.animateEmojiImage()
         })
-        
     }
     
     // MARK : 위치 받아오기 에러 처리
@@ -118,6 +118,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         self.weatherView.layer.cornerRadius = 3
     }
     
+    // MARK : Reload Button Action
     @IBAction func clickReloadButton(_ sender: UIButton) {
         // rotate animation
         UIView.animate(withDuration: 0.5) { () -> Void in
@@ -131,19 +132,16 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         AqiChartView.playAnimations()
     }
     
+    // MARK : find location and address
     func firstSetting(){
-        // find location and address
         self.currentLocation = locationManager.location
         print(self.currentLocation.coordinate.latitude)
         print(self.currentLocation.coordinate.longitude)
         self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
-        
-        // play chart animation
-        AqiChartView.playAnimations()
     }
     
+    // MARK : 위도, 경도에 따른 주소 찾기
     func findAddr(lat: CLLocationDegrees, long: CLLocationDegrees){
-        
         let findLocation = CLLocation(latitude: lat, longitude: long)
         let geocoder = CLGeocoder()
         let locale = Locale(identifier: "Ko-kr")
@@ -156,20 +154,20 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 if let area: String = address.last?.locality{
                     print("findaddress : ", area) // 서대문구
                     self.connectAqiAPI(region: area)
-                    self.connectWeatherAPI()
                 }
             }
         })
     }
     
-    // 더보기 페이지로 이동
+    // MARK : 더보기 페이지로 이동
     @IBAction func moveDetail(_ sender: UIButton) {
         guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") else { return }
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
+    // MARK : emoji animation
     func animateEmojiImage(){
-        self.EmojiImageView.transform = CGAffineTransform(scaleX: 0.01, y: 0.01)
+        self.EmojiImageView.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         UIView.animate(
             withDuration: 1.2,
             delay: 0,
@@ -192,10 +190,20 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             let decoder = JSONDecoder()
             if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 self.aqiDataSet = [object] as! [AqiResponseString]
+                
+                for aqiDouble in self.aqiDataSet[0].list! {
+                    let doubleVal = Double(aqiDouble.pm10Value!)
+                    AqiViewController.aqiList.append(doubleVal!)
+                }
+                
                 let pm10Val: String = self.aqiDataSet[0].list![0].pm10Value ?? ""
                 let pm25Val: String = self.aqiDataSet[0].list![0].pm25Value ?? ""
                 self.pm10Label.text = self.getPm10String(pm10: pm10Val) + " " + pm10Val + " ㎍/㎥"
                 self.pm25Label.text = self.getPm25String(pm25: pm25Val) + " " + pm25Val + " ㎍/㎥"
+                
+                
+                AqiChartView.playAnimations()
+                
             }
         } catch let e as NSError {
             print(e.localizedDescription)
@@ -223,13 +231,23 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         switch pm10Int {
         case let x where x <= 30 :
             pm10Str = "좋음"
+            self.EmojiImageView.image = UIImage(named: "emoji1")
+            self.aqiStatusSmallLabel.text = "쾌적한 날이에요~"
         case let x where x <= 80 :
             pm10Str = "보통"
+            self.EmojiImageView.image = UIImage(named: "emoji2")
+            self.aqiStatusSmallLabel.text = "나쁘지 않은 날이에요"
         case let x where x <= 150 :
             pm10Str = "나쁨"
+            self.EmojiImageView.image = UIImage(named: "emoji4")
+            self.aqiStatusSmallLabel.text = "탁한 공기. 마스크 꼭 챙기세요~"
         default:
             pm10Str = "매우 나쁨"
+            self.EmojiImageView.image = UIImage(named: "emoji6")
+            self.aqiStatusSmallLabel.text = "밖에 나가면 죽음뿐!"
         }
+        
+        self.aqiStatusBigLabel.text = pm10Str
         return pm10Str
     }
     
