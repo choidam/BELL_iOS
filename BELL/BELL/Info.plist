@@ -8,6 +8,12 @@
       <key>NSAllowsArbitraryLoads</key><true/>
     </dict>
     
+    <!-- location -->
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>This application requires location services to work</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>This application requires location services to work</string>
+    
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Location is required to find out where you are</string>
 	<key>CFBundleDevelopmentRegion</key>
