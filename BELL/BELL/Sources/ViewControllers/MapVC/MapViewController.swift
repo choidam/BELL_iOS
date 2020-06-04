@@ -8,11 +8,17 @@
 
 import UIKit
 import FloatingPanel
+import MapKit
 
 class MapViewController: UIViewController, FloatingPanelControllerDelegate {
 
+    @IBOutlet weak var mapView: MKMapView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.mapView.showsUserLocation = true
+        self.mapView.setUserTrackingMode(.follow, animated: true)
         
         let fpc = FloatingPanelController()
         fpc.delegate = self
@@ -21,11 +27,7 @@ class MapViewController: UIViewController, FloatingPanelControllerDelegate {
         
         fpc.set(contentViewController: contentVC)
         fpc.addPanel(toParent: self)
-
-        // fpc_content
-        
         
     }
-
 
 }

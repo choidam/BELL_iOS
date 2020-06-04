@@ -195,7 +195,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 
                 for aqiDouble in self.aqiDataSet[0].list! {
                     let doubleVal = Double(aqiDouble.pm10Value!)
-                    AqiViewController.aqiList.append(doubleVal!)
+//                    AqiViewController.aqiList.append(doubleVal!)
                 }
                 
                 let pm10Val: String = self.aqiDataSet[0].list![0].pm10Value ?? ""
