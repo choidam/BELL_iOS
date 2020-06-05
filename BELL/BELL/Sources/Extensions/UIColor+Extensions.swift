@@ -39,4 +39,21 @@ extension UIColor {
         return UIColor(rgb: 0xf0f5f9)
     }
     
+    // MARK : grade1~grade4 미세먼지 등급에 따른 색상
+    @nonobjc class var grade1: UIColor {
+        return UIColor(rgb: 0x3232FF)
+    }
+    
+    @nonobjc class var grade2: UIColor {
+        return UIColor(rgb: 0x40A940)
+    }
+    
+    @nonobjc class var grade3: UIColor {
+        return UIColor(rgb: 0xFFE146)
+    }
+    
+    @nonobjc class var grade4: UIColor {
+        return UIColor(rgb: 0xFF4646)
+    }
+
 }

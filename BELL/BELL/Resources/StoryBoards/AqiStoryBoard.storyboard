@@ -699,14 +699,20 @@
                         <outlet property="activeLabel" destination="bkO-f3-OxA" id="ENR-fh-tfl"/>
                         <outlet property="activeView" destination="111-rb-7Iy" id="fnt-k6-yVi"/>
                         <outlet property="coLabel" destination="01v-sL-vdt" id="b14-RU-rgq"/>
+                        <outlet property="coView" destination="5Mb-IM-Zfa" id="NOk-CD-oNp"/>
                         <outlet property="imageContainView1" destination="oXr-i7-vW1" id="rD4-4k-qHb"/>
                         <outlet property="imageContainView2" destination="BdS-rb-ejG" id="6rd-af-ZIT"/>
                         <outlet property="imageContainView3" destination="lkX-18-jhF" id="467-2U-Jyz"/>
                         <outlet property="noLabel" destination="tOb-jX-Q7l" id="CMc-Aw-nzD"/>
+                        <outlet property="noView" destination="NGF-RS-Ios" id="raZ-Td-laA"/>
                         <outlet property="ozoneLabel" destination="HSS-T3-4se" id="Zb2-Xo-gZB"/>
+                        <outlet property="ozoneView" destination="hK4-gO-rey" id="VzP-VF-CAJ"/>
                         <outlet property="pm10Label" destination="ckm-tZ-ZcW" id="4wc-z8-2jd"/>
+                        <outlet property="pm10View" destination="n4R-Aj-tPe" id="zOX-kI-rcx"/>
                         <outlet property="pm25Label" destination="7gV-zJ-yfh" id="rmt-Kx-hAf"/>
+                        <outlet property="pm25View" destination="dDj-3x-dv4" id="7FW-3k-oB3"/>
                         <outlet property="soLabel" destination="Ske-tI-ODQ" id="Sy9-Sv-hb6"/>
+                        <outlet property="soView" destination="9Hi-Cd-T1e" id="9cK-Oz-4Ai"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzi-HB-qB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -159,8 +159,17 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     // MARK : 더보기 페이지로 이동
+    // TODO : change large title -> small titles
     @IBAction func moveDetail(_ sender: UIButton) {
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") else { return }
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AqiDetailViewController") as! AqiDetailViewController
+        
+        vc.pm10Str = self.aqiDataSet[0].list![0].pm10Value ?? ""
+        vc.pm25Str = self.aqiDataSet[0].list![0].pm25Value ?? ""
+        vc.ozoneStr = self.aqiDataSet[0].list![0].o3Value ?? ""
+        vc.coStr = self.aqiDataSet[0].list![0].coValue ?? ""
+        vc.soStr = self.aqiDataSet[0].list![0].so2Value ?? ""
+        vc.noStr = self.aqiDataSet[0].list![0].no2Value ?? ""
+        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
