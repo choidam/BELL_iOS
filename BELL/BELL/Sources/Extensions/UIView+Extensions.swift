@@ -19,6 +19,12 @@ extension UIView {
         self.layer.shadowRadius = 2
     }
     
+    func setImageContainView(){
+        self.layer.cornerRadius = 15
+        self.layer.borderColor = UIColor(rgb: 0x969696).cgColor
+        self.layer.borderWidth = 1
+    }
+    
     func setGradientBackground(colorTop: UIColor, colorBottom: UIColor) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = [colorBottom.cgColor, colorTop.cgColor]
