@@ -18,6 +18,8 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     var locationManager: CLLocationManager = CLLocationManager()
     var currentLocation: CLLocation!
     
+    var searchLocation: CLLocation! // 내가 검색한 위치
+    
     @IBOutlet weak var InfoView: UIView! // 미세먼지 정보 view
     @IBOutlet weak var locationButton: UIButton!
     
@@ -25,6 +27,33 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     @IBOutlet weak var addressDetailLabel: UILabel!
     @IBOutlet weak var aqiStatusLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    // MARK : 서울 구의 위치 정보
+    let dobongLoc = CLLocationCoordinate2D(latitude: 37.6658609, longitude: 127.0317674) // 도봉구
+    let eunpyeongLoc = CLLocationCoordinate2D(latitude: 37.6176125, longitude: 126.9227004) // 은평구
+    let dongdaemoonLoc = CLLocationCoordinate2D(latitude: 37.5838012, longitude: 127.0507003) // 동대문구
+    let dongjakLoc = CLLocationCoordinate2D(latitude: 37.4965037, longitude: 126.9443073) // 동작구
+    let geumcheonLoc = CLLocationCoordinate2D(latitude: 37.4600969, longitude: 126.9001546) // 금천구
+    let guroLoc = CLLocationCoordinate2D(latitude: 37.4954856, longitude: 126.858121) // 구로구
+    let jongnoLoc = CLLocationCoordinate2D(latitude: 37.5990998, longitude: 126.9861493) // 종로구
+    let gangbukLoc = CLLocationCoordinate2D(latitude: 37.6469954, longitude: 127.0147158) // 강북구
+    let jungnangLoc = CLLocationCoordinate2D(latitude: 37.5953795, longitude: 127.0939669) // 중랑구
+    let gangnamLoc = CLLocationCoordinate2D(latitude: 37.4959854, longitude: 127.0664091) // 강남구
+    let gangseoLoc = CLLocationCoordinate2D(latitude: 37.5657617, longitude: 126.8226561) // 강서구
+    let jungLoc = CLLocationCoordinate2D(latitude: 37.5579452, longitude: 126.9941904) // 중구
+    let gangdongLoc = CLLocationCoordinate2D(latitude: 37.5492077, longitude: 127.1464824) // 강동구
+    let gwangjinLoc = CLLocationCoordinate2D(latitude: 37.5481445, longitude: 127.0857528) // 광진구
+    let mapoLoc = CLLocationCoordinate2D(latitude: 37.5622906, longitude: 126.9087803) // 마포구
+    let seochoLoc = CLLocationCoordinate2D(latitude: 37.4769528, longitude: 127.0378103) // 서초구
+    let seongbukLoc = CLLocationCoordinate2D(latitude: 37.606991, longitude: 127.0232185) // 성북구
+    let nowonLoc = CLLocationCoordinate2D(latitude: 37.655264, longitude: 127.0771201) // 노원구
+    let songpaLoc = CLLocationCoordinate2D(latitude: 37.5048534, longitude: 127.1144822) // 송파구
+    let seoudaemoonLoc = CLLocationCoordinate2D(latitude: 37.5820369, longitude: 126.9356665) // 서대문구
+    let yangcheonLoc = CLLocationCoordinate2D(latitude: 37.5270616, longitude: 126.8561534) // 양천구
+    let yeongdeungpoLoc = CLLocationCoordinate2D(latitude: 37.520641, longitude: 126.9139242) // 영등포구
+    let gwanakLoc = CLLocationCoordinate2D(latitude: 37.4653993, longitude: 126.9438071) // 관악구
+    let seongdongLoc = CLLocationCoordinate2D(latitude: 37.5506753, longitude: 127.0409622) // 성동구
+    let yongsanLoc = CLLocationCoordinate2D(latitude: 37.5311008, longitude: 126.9810742) // 용산구
     
     var aqiDataSet = [AqiResponseString]() // aqi dataset
     
@@ -153,11 +182,116 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
     
     // MARK : 미세먼지 조회를 원하는 지역 검색
     @IBAction func clickSearchButton(_ sender: UIButton) {
-        self.connectAqiAPI(region: self.searchTextField.text ?? "" )
         self.addressLabel.text = self.searchTextField.text
-        self.searchTextField.text = ""
         
-        // TODO : MAP View 의 위치를 내가 검색한 위치로 옮기기, 상세 위치 알아오기
+        switch addressLabel.text {
+        case "도봉구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.dobongLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "은평구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.eunpyeongLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "동대문구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.eunpyeongLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "동작구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.dongjakLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "금천구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.geumcheonLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "구로구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.guroLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "종로구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.jongnoLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "강북구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gangbukLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "중랑구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.jungnangLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "강남구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gangnamLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "강서구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gangseoLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "중구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.jungLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "강동구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gangdongLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "광진구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gwangjinLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "마포구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.mapoLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "서초구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.seochoLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "성북구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.seongbukLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "노원구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.nowonLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "송파구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.songpaLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "서대문구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.seoudaemoonLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "양천구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.yangcheonLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "영등포구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.yeongdeungpoLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "관악구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.gwanakLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "성동구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.seongdongLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        case "용산구":
+            self.connectAqiAPI(region: self.searchTextField.text ?? "" )
+            let region = MKCoordinateRegion(center: self.yongsanLoc, span: MKCoordinateSpan(latitudeDelta:0.01, longitudeDelta:0.01))
+            self.mapView.setRegion(region, animated: true)
+        default:
+            let alert = UIAlertController(title: "잘못된 주소입니다.", message: "정확한 주소를 입력해주세요.", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+        self.searchTextField.text = ""
         
     }
     
