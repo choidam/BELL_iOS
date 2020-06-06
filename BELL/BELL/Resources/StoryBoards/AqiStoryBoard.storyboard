@@ -698,7 +698,7 @@
                     <connections>
                         <outlet property="activeLabel" destination="bkO-f3-OxA" id="ENR-fh-tfl"/>
                         <outlet property="activeView" destination="111-rb-7Iy" id="fnt-k6-yVi"/>
-                        <outlet property="coLabel" destination="01v-sL-vdt" id="b14-RU-rgq"/>
+                        <outlet property="coLabel" destination="f9m-mU-Izo" id="yAw-BB-pN9"/>
                         <outlet property="coView" destination="5Mb-IM-Zfa" id="NOk-CD-oNp"/>
                         <outlet property="imageContainView1" destination="oXr-i7-vW1" id="rD4-4k-qHb"/>
                         <outlet property="imageContainView2" destination="BdS-rb-ejG" id="6rd-af-ZIT"/>
