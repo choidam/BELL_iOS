@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		8CD15985C354493D3A9C2D7D /* Pods_BELL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8556440705E5C15020EB5CA2 /* Pods_BELL.framework */; };
+		B629DDD4248D2F7D003D56B0 /* PopupStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */; };
+		B629DDD7248D2FB8003D56B0 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */; };
+		B629DDD9248D3187003D56B0 /* Popup2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */; };
 		B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */; };
 		B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */; };
 		B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B681CF7F24829C1700DB3526 /* AqiChartView.swift */; };
@@ -33,6 +36,9 @@
 /* Begin PBXFileReference section */
 		23E772BFD5D5F8BA11DC5A75 /* Pods-BELL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.debug.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.debug.xcconfig"; sourceTree = "<group>"; };
 		8556440705E5C15020EB5CA2 /* Pods_BELL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BELL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupStoryBoard.storyboard; sourceTree = "<group>"; };
+		B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
+		B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup2ViewController.swift; sourceTree = "<group>"; };
 		B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aqiNavViewController.swift; sourceTree = "<group>"; };
 		B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		B681CF7F24829C1700DB3526 /* AqiChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiChartView.swift; sourceTree = "<group>"; };
@@ -76,6 +82,15 @@
 				8556440705E5C15020EB5CA2 /* Pods_BELL.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B629DDD5248D2FA3003D56B0 /* PopupVC */ = {
+			isa = PBXGroup;
+			children = (
+				B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */,
+				B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */,
+			);
+			path = PopupVC;
 			sourceTree = "<group>";
 		};
 		B64D52CC247FBB3F001B35C3 /* AqiVC */ = {
@@ -161,6 +176,7 @@
 				B68556BD245E86FE00742344 /* LaunchScreen.storyboard */,
 				B68556D3245F4D0700742344 /* AqiStoryBoard.storyboard */,
 				B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */,
+				B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -196,6 +212,7 @@
 		B68556CE245F4C7500742344 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B629DDD5248D2FA3003D56B0 /* PopupVC */,
 				B6ECC37D2483855800EB7142 /* AqiDetailVC */,
 				B64D52CE247FBC69001B35C3 /* MainVC */,
 				B64D52CD247FBC5E001B35C3 /* MapVC */,
@@ -281,6 +298,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B629DDD4248D2F7D003D56B0 /* PopupStoryBoard.storyboard in Resources */,
 				B68556BF245E86FE00742344 /* LaunchScreen.storyboard in Resources */,
 				B68556BC245E86FE00742344 /* Assets.xcassets in Resources */,
 				B68556BA245E86FD00742344 /* Main.storyboard in Resources */,
@@ -343,8 +361,10 @@
 				B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
 				B68556CA245F4C2600742344 /* AqiResponseString.swift in Sources */,
+				B629DDD9248D3187003D56B0 /* Popup2ViewController.swift in Sources */,
 				B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */,
 				B6ECC381248423C500EB7142 /* AqiService.swift in Sources */,
+				B629DDD7248D2FB8003D56B0 /* PopupViewController.swift in Sources */,
 				B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */,
 				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,

@@ -37,18 +37,6 @@
                                                                             <constraint firstAttribute="width" constant="1" id="Eza-xV-qUC"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="미세먼지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q74-4d-myg">
-                                                                        <rect key="frame" x="20" y="20" width="148.5" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="초미세먼지" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="416-fX-eC5">
-                                                                        <rect key="frame" x="209.5" y="20" width="148.5" height="17"/>
-                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                        <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- ㎍/㎥" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HbF-Vh-cFz">
                                                                         <rect key="frame" x="10" y="52" width="168.5" height="21"/>
                                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -61,25 +49,45 @@
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ebo-4g-LVI">
+                                                                        <rect key="frame" x="10" y="13" width="168.5" height="29"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <state key="normal" title="미세먼지 &gt;">
+                                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="clickPm10Btn:" destination="fcm-EQ-1A6" eventType="touchUpInside" id="1SV-gK-z4Y"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cTj-Ci-dBn">
+                                                                        <rect key="frame" x="199.5" y="13" width="168.5" height="29"/>
+                                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                                        <state key="normal" title="초미세먼지 &gt;">
+                                                                            <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        </state>
+                                                                        <connections>
+                                                                            <action selector="clickPm25Btn:" destination="fcm-EQ-1A6" eventType="touchUpInside" id="U6Q-PK-11c"/>
+                                                                        </connections>
+                                                                    </button>
                                                                 </subviews>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                                 <constraints>
+                                                                    <constraint firstItem="Ebo-4g-LVI" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="13" id="3zY-TY-UE6"/>
+                                                                    <constraint firstItem="cTj-Ci-dBn" firstAttribute="leading" secondItem="QLu-rR-rzb" secondAttribute="trailing" constant="10" id="7pD-Lx-lWG"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="leading" secondItem="HbF-Vh-cFz" secondAttribute="trailing" constant="10" id="AN4-dv-OlO"/>
-                                                                    <constraint firstAttribute="trailing" secondItem="416-fX-eC5" secondAttribute="trailing" constant="20" id="KVJ-Ja-YUe"/>
-                                                                    <constraint firstItem="wpD-v9-MrF" firstAttribute="top" secondItem="416-fX-eC5" secondAttribute="bottom" constant="15" id="MvX-I4-bt0"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="cTj-Ci-dBn" secondAttribute="trailing" constant="10" id="Cw5-hH-pk5"/>
+                                                                    <constraint firstItem="cTj-Ci-dBn" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="13" id="MDA-7K-RZ3"/>
                                                                     <constraint firstItem="wpD-v9-MrF" firstAttribute="leading" secondItem="QLu-rR-rzb" secondAttribute="trailing" constant="10" id="Nsd-HF-o1Y"/>
-                                                                    <constraint firstItem="Q74-4d-myg" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="20" id="OFG-5Z-QIb"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="centerX" secondItem="NTs-vf-gow" secondAttribute="centerX" id="PcY-hG-8Ev"/>
                                                                     <constraint firstAttribute="bottom" secondItem="QLu-rR-rzb" secondAttribute="bottom" constant="10" id="Pf8-2k-0fs"/>
-                                                                    <constraint firstItem="QLu-rR-rzb" firstAttribute="leading" secondItem="Q74-4d-myg" secondAttribute="trailing" constant="20" id="TJS-kB-Tvi"/>
-                                                                    <constraint firstItem="416-fX-eC5" firstAttribute="leading" secondItem="QLu-rR-rzb" secondAttribute="trailing" constant="20" id="Y3e-Mb-mNW"/>
-                                                                    <constraint firstItem="HbF-Vh-cFz" firstAttribute="top" secondItem="Q74-4d-myg" secondAttribute="bottom" constant="15" id="kUs-bd-Wew"/>
+                                                                    <constraint firstItem="HbF-Vh-cFz" firstAttribute="top" secondItem="Ebo-4g-LVI" secondAttribute="bottom" constant="10" id="RdB-Xn-okA"/>
+                                                                    <constraint firstItem="QLu-rR-rzb" firstAttribute="leading" secondItem="Ebo-4g-LVI" secondAttribute="trailing" constant="10" id="k2T-qQ-m8K"/>
+                                                                    <constraint firstItem="Ebo-4g-LVI" firstAttribute="leading" secondItem="NTs-vf-gow" secondAttribute="leading" constant="10" id="n6Y-WG-808"/>
                                                                     <constraint firstAttribute="height" constant="100" id="nKn-Uz-0CU"/>
+                                                                    <constraint firstItem="wpD-v9-MrF" firstAttribute="top" secondItem="cTj-Ci-dBn" secondAttribute="bottom" constant="10" id="pa6-Kt-kZq"/>
                                                                     <constraint firstAttribute="trailing" secondItem="wpD-v9-MrF" secondAttribute="trailing" constant="10" id="qN6-Wa-VAa"/>
-                                                                    <constraint firstItem="Q74-4d-myg" firstAttribute="leading" secondItem="NTs-vf-gow" secondAttribute="leading" constant="20" id="sPb-cF-1Ta"/>
                                                                     <constraint firstItem="QLu-rR-rzb" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="10" id="tMk-Yo-2a6"/>
                                                                     <constraint firstItem="HbF-Vh-cFz" firstAttribute="leading" secondItem="NTs-vf-gow" secondAttribute="leading" constant="10" id="vgo-Cq-wNd"/>
-                                                                    <constraint firstItem="416-fX-eC5" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="20" id="vws-nh-4ZR"/>
                                                                 </constraints>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-eA-Ekd">
@@ -760,7 +768,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vzi-HB-qB2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4179.7101449275369" y="128.57142857142856"/>
+            <point key="canvasLocation" x="4132" y="138"/>
         </scene>
         <!--AQI-->
         <scene sceneID="2Eo-KO-ues">
@@ -785,7 +793,7 @@
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
         <image name="emoji1" width="512" height="512"/>
-        <image name="mask" width="16" height="16"/>
+        <image name="mask" width="512" height="512"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="sun.min" catalog="system" width="64" height="60"/>
         <image name="wind" catalog="system" width="64" height="50"/>

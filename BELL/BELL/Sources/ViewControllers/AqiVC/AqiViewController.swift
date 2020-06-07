@@ -236,6 +236,26 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         }
     }
     
+    // MARK : 미세먼지 더보기 버튼 클릭
+    @IBAction func clickPm10Btn(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "PopupStoryBoard", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
+        vc.pm10 = self.aqiDataSet[0].list![0].pm10Value!
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    // MARK : 초미세먼지 더보기 버튼 클릭
+    @IBAction func clickPm25Btn(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "PopupStoryBoard", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "Popup2ViewController") as! Popup2ViewController
+        vc.pm25 = self.aqiDataSet[0].list![0].pm25Value!
+        vc.modalPresentationStyle = .overCurrentContext
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     // MARK : 미세먼지 수치에 따른 기준 (pm10)
     func getPm10String(pm10: String) -> String {
         
