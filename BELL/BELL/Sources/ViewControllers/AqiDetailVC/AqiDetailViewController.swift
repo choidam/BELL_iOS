@@ -17,9 +17,9 @@ class AqiDetailViewController: UIViewController {
     var soStr: String = ""
     var noStr: String = ""
     
-    @IBOutlet weak var imageContainView1: UIView!
-    @IBOutlet weak var imageContainView2: UIView!
-    @IBOutlet weak var imageContainView3: UIView!
+    @IBOutlet weak var imageContainView1: UIView! // 실외 활동
+    @IBOutlet weak var imageContainView2: UIView! // 마스크
+    @IBOutlet weak var imageContainView3: UIView! // 환기
     
     @IBOutlet weak var activeView: UIView!
     @IBOutlet weak var activeLabel: UILabel!
@@ -31,7 +31,6 @@ class AqiDetailViewController: UIViewController {
     @IBOutlet weak var soLabel: UILabel! // 아황산가스
     @IBOutlet weak var noLabel: UILabel! // 이산화질소
     
-    
     @IBOutlet weak var pm10View: UIView!
     @IBOutlet weak var pm25View: UIView!
     @IBOutlet weak var ozoneView: UIView!
@@ -42,28 +41,48 @@ class AqiDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imageContainView1.setViewShadow()
-        self.imageContainView2.setViewShadow()
-        self.imageContainView3.setViewShadow()
+        self.imageContainView1.selectImageView()
+        self.imageContainView2.deselectImageView()
+        self.imageContainView3.deselectImageView()
         
         self.activeView.setViewShadow()
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleClickActiveView( _:)))
-        self.imageContainView1.addGestureRecognizer(tap)
-//        self.imageContainView2.addGestureRecognizer(tap)
-//        self.imageContainView3.addGestureRecognizer(tap)
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.handleClickActiveView1( _:)))
+        self.imageContainView1.addGestureRecognizer(tap1)
+        
+        let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.handleClickActiveView2(_:)))
+        self.imageContainView2.addGestureRecognizer(tap2)
+        
+        let tap3 = UITapGestureRecognizer(target: self, action: #selector(self.handleClickActiveView3(_:)))
+        self.imageContainView3.addGestureRecognizer(tap3)
         
         self.settingLabels()
-        
-        
-        
     }
     
-    // MARK : ImageContainView 클릭 이벤트
-    @objc func handleClickActiveView(_ sender: UITapGestureRecognizer? = nil){
-        print("click!")
-//        print("sender??", sender)
+    // MARK : ImageContainView 클릭 이벤트 - 실외 활동
+    @objc func handleClickActiveView1(_ sender: UITapGestureRecognizer? = nil){
+        self.imageContainView1.selectImageView()
+        self.imageContainView2.deselectImageView()
+        self.imageContainView3.deselectImageView()
+        self.activeLabel.text = "실외 활동 문제 없어요"
     }
+    
+    // MARK : ImageContainView 클릭 이벤트 - 마스크
+    @objc func handleClickActiveView2(_ sender: UITapGestureRecognizer? = nil){
+        self.imageContainView2.selectImageView()
+        self.imageContainView1.deselectImageView()
+        self.imageContainView3.deselectImageView()
+        self.activeLabel.text = "필요해요"
+    }
+    
+    // MARK : ImageContainView 클릭 이벤트 - 환기
+    @objc func handleClickActiveView3(_ sender: UITapGestureRecognizer? = nil){
+        self.imageContainView3.selectImageView()
+        self.imageContainView1.deselectImageView()
+        self.imageContainView2.deselectImageView()
+        self.activeLabel.text = "자제해요"
+    }
+    
     
     // MARK : 미세먼지 수치에 따른 label & color 지정
     func settingLabels(){

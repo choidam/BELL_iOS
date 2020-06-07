@@ -82,13 +82,13 @@
                                                                     <constraint firstItem="416-fX-eC5" firstAttribute="top" secondItem="NTs-vf-gow" secondAttribute="top" constant="20" id="vws-nh-4ZR"/>
                                                                 </constraints>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="좋음" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-eA-Ekd">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="loading.." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4nF-eA-Ekd">
                                                                 <rect key="frame" x="30" y="176.5" width="318" height="25.5"/>
                                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="쾌적한 날이에요~" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-43-jPo">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bQz-43-jPo">
                                                                 <rect key="frame" x="30" y="207" width="318" height="16"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                                 <nil key="textColor"/>
@@ -118,7 +118,7 @@
                                                             <constraint firstItem="bQz-43-jPo" firstAttribute="top" secondItem="4nF-eA-Ekd" secondAttribute="bottom" constant="5" id="xat-PD-9HO"/>
                                                         </constraints>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="나의 주소" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-lr-pGz">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="위치 읽는중.." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SQ8-lr-pGz">
                                                         <rect key="frame" x="91.5" y="12" width="270" height="16"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="SQ8-lr-pGz" secondAttribute="height" multiplier="270:16" id="VHi-Au-npM"/>
@@ -785,7 +785,7 @@
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="64" height="50"/>
         <image name="emoji1" width="512" height="512"/>
-        <image name="mask" width="512" height="512"/>
+        <image name="mask" width="16" height="16"/>
         <image name="person" catalog="system" width="64" height="58"/>
         <image name="sun.min" catalog="system" width="64" height="60"/>
         <image name="wind" catalog="system" width="64" height="50"/>

@@ -19,9 +19,19 @@ extension UIView {
         self.layer.shadowRadius = 2
     }
     
-    func setImageContainView(){
-        self.layer.cornerRadius = 15
-        self.layer.borderColor = UIColor(rgb: 0x969696).cgColor
+    func deselectImageView(){
+        self.layer.cornerRadius = 7
+        self.layer.borderColor = UIColor(rgb: 0xdcdcdc).cgColor
+        self.layer.borderWidth = 1
+        self.layer.shadowColor = UIColor.black.cgColor
+        self.layer.shadowOpacity = 0.15
+        self.layer.shadowOffset = .zero
+        self.layer.shadowRadius = 2
+    }
+    
+    func selectImageView(){
+        self.layer.cornerRadius = 7
+        self.layer.borderColor = UIColor(rgb: 0x9696FF).cgColor
         self.layer.borderWidth = 1
     }
     
