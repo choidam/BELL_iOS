@@ -50,19 +50,19 @@ class AqiDetailViewController: UIViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleClickActiveView( _:)))
         self.imageContainView1.addGestureRecognizer(tap)
-        self.imageContainView2.addGestureRecognizer(tap)
-        self.imageContainView3.addGestureRecognizer(tap)
+//        self.imageContainView2.addGestureRecognizer(tap)
+//        self.imageContainView3.addGestureRecognizer(tap)
         
         self.settingLabels()
         
-        print("oznoe?? ", self.ozoneStr)
+        
         
     }
     
     // MARK : ImageContainView 클릭 이벤트
     @objc func handleClickActiveView(_ sender: UITapGestureRecognizer? = nil){
         print("click!")
-        print(index)
+//        print("sender??", sender)
     }
     
     // MARK : 미세먼지 수치에 따른 label & color 지정
@@ -128,19 +128,19 @@ class AqiDetailViewController: UIViewController {
         switch ozoneToDouble{
         case let x where x<0.031 :
             self.ozoneView.layer.backgroundColor = UIColor.grade1.cgColor
-            self.ozoneLabel.text = "좋음 " + self.ozoneStr + "ppm"
+            self.ozoneLabel.text = "좋음 " + self.ozoneStr + " ppm"
             self.ozoneLabel.textColor = UIColor.grade1
         case let x where x<0.091 :
             self.ozoneView.layer.backgroundColor = UIColor.grade2.cgColor
-            self.ozoneLabel.text = "보통 " + self.ozoneStr + "ppm"
+            self.ozoneLabel.text = "보통 " + self.ozoneStr + " ppm"
             self.ozoneLabel.textColor = UIColor.grade2
         case let x where x<0.151 :
             self.ozoneView.layer.backgroundColor = UIColor.grade3.cgColor
-            self.ozoneLabel.text = "나쁨 " + self.ozoneStr + "ppm"
+            self.ozoneLabel.text = "나쁨 " + self.ozoneStr + " ppm"
             self.ozoneLabel.textColor = UIColor.grade3
         default:
             self.ozoneView.layer.backgroundColor = UIColor.grade4.cgColor
-            self.ozoneLabel.text = "매우 나쁨 " + self.ozoneStr + "ppm"
+            self.ozoneLabel.text = "매우 나쁨 " + self.ozoneStr + " ppm"
             self.ozoneLabel.textColor = UIColor.grade4
         }
     }

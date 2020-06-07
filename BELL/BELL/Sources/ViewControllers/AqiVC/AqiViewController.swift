@@ -85,7 +85,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             self.animateEmojiImage()
         })
         
-        self.connectWeatherAPI()
+//        self.connectWeatherAPI()
     }
     
     // MARK : 위치 받아오기 에러 처리
