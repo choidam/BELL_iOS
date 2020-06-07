@@ -28,7 +28,7 @@ class PopupViewController: UIViewController {
         guard let  aqiIdxToFloat = Float(self.pm10) else { return }
         self.aqiSlider.value = aqiIdxToFloat
         self.aqiSlider.isUserInteractionEnabled = false
-        self.aqiSlider.te
+//        self.aqiSlider.te
         self.aqiSlider.center = setUISliderThumbValueWithLabel(slider: self.aqiSlider)
         
 //        self.setUISliderThumbValueWithLabel(slider: self.aqiSlider)
