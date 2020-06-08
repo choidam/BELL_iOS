@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Dhi-lI-PYD">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
@@ -138,57 +138,14 @@
                         <outlet property="aqiSmallLabel" destination="D1u-qP-fko" id="BjB-NF-Cg3"/>
                         <outlet property="emojiImage" destination="IMn-hG-gFz" id="Vvz-BW-wbk"/>
                         <outlet property="emojiView" destination="h61-OU-sJE" id="lhL-Gg-v0Z"/>
+                        <outlet property="endSliderLabel" destination="XKk-gZ-kQX" id="EfK-zU-Eaq"/>
+                        <outlet property="midSliderLabel" destination="CZf-aw-sPc" id="Cbg-BT-QUF"/>
                         <outlet property="popUpView" destination="jJ0-kE-4Cq" id="TDN-sf-vTd"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mIA-Ej-x2N" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-262.31884057971018" y="111.83035714285714"/>
-        </scene>
-        <!--Popup2 View Controller-->
-        <scene sceneID="uhd-Cs-1cx">
-            <objects>
-                <viewController storyboardIdentifier="Popup2ViewController" id="67u-cx-nak" customClass="Popup2ViewController" customModule="BELL" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GSX-bc-U0X">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view alpha="0.25" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xgy-Hy-r2m">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uvm-9W-X1z">
-                                <rect key="frame" x="57" y="298" width="300" height="300"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gMA-RU-ONa">
-                                        <rect key="frame" x="127" y="135" width="46" height="30"/>
-                                        <state key="normal" title="Button"/>
-                                        <connections>
-                                            <action selector="clickDismiss:" destination="Dhi-lI-PYD" eventType="touchUpInside" id="Ryn-Sm-AXY"/>
-                                            <action selector="clickDismiss:" destination="67u-cx-nak" eventType="touchUpInside" id="ncd-35-dL8"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="gMA-RU-ONa" firstAttribute="centerY" secondItem="Uvm-9W-X1z" secondAttribute="centerY" id="Ff2-0n-eWd"/>
-                                    <constraint firstAttribute="width" constant="300" id="Vfs-Zg-1sp"/>
-                                    <constraint firstItem="gMA-RU-ONa" firstAttribute="centerX" secondItem="Uvm-9W-X1z" secondAttribute="centerX" id="XaV-ra-e2V"/>
-                                    <constraint firstAttribute="height" constant="300" id="uMe-lG-0Ui"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="Uvm-9W-X1z" firstAttribute="centerX" secondItem="GSX-bc-U0X" secondAttribute="centerX" id="R0C-bK-JtU"/>
-                            <constraint firstItem="Uvm-9W-X1z" firstAttribute="centerY" secondItem="GSX-bc-U0X" secondAttribute="centerY" id="swf-f3-ass"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="7K2-jW-Bac"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wsy-ia-ADw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="567" y="116"/>
         </scene>
     </scenes>
     <resources>

@@ -10,7 +10,6 @@
 		8CD15985C354493D3A9C2D7D /* Pods_BELL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8556440705E5C15020EB5CA2 /* Pods_BELL.framework */; };
 		B629DDD4248D2F7D003D56B0 /* PopupStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */; };
 		B629DDD7248D2FB8003D56B0 /* PopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */; };
-		B629DDD9248D3187003D56B0 /* Popup2ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */; };
 		B629DDDB248D71DC003D56B0 /* AqiSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = B629DDDA248D71DC003D56B0 /* AqiSlider.swift */; };
 		B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */; };
 		B64D52CB247FB8B4001B35C3 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */; };
@@ -39,7 +38,6 @@
 		8556440705E5C15020EB5CA2 /* Pods_BELL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BELL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PopupStoryBoard.storyboard; sourceTree = "<group>"; };
 		B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopupViewController.swift; sourceTree = "<group>"; };
-		B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Popup2ViewController.swift; sourceTree = "<group>"; };
 		B629DDDA248D71DC003D56B0 /* AqiSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiSlider.swift; sourceTree = "<group>"; };
 		B64D52C8247FB89C001B35C3 /* aqiNavViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = aqiNavViewController.swift; sourceTree = "<group>"; };
 		B64D52CA247FB8B4001B35C3 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
@@ -90,7 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				B629DDD6248D2FB8003D56B0 /* PopupViewController.swift */,
-				B629DDD8248D3187003D56B0 /* Popup2ViewController.swift */,
 				B629DDDA248D71DC003D56B0 /* AqiSlider.swift */,
 			);
 			path = PopupVC;
@@ -365,7 +362,6 @@
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
 				B629DDDB248D71DC003D56B0 /* AqiSlider.swift in Sources */,
 				B68556CA245F4C2600742344 /* AqiResponseString.swift in Sources */,
-				B629DDD9248D3187003D56B0 /* Popup2ViewController.swift in Sources */,
 				B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */,
 				B6ECC381248423C500EB7142 /* AqiService.swift in Sources */,
 				B629DDD7248D2FB8003D56B0 /* PopupViewController.swift in Sources */,

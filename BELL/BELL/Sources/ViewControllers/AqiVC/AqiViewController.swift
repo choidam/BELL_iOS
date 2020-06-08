@@ -240,6 +240,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     @IBAction func clickPm10Btn(_ sender: UIButton) {
         let sb = UIStoryboard(name: "PopupStoryBoard", bundle: nil)
         let vc = sb.instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
+        vc.isPm10 = true
         vc.pm10 = self.aqiDataSet[0].list![0].pm10Value!
         vc.modalPresentationStyle = .overCurrentContext
         
@@ -249,8 +250,9 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     // MARK : 초미세먼지 더보기 버튼 클릭
     @IBAction func clickPm25Btn(_ sender: UIButton) {
         let sb = UIStoryboard(name: "PopupStoryBoard", bundle: nil)
-        let vc = sb.instantiateViewController(withIdentifier: "Popup2ViewController") as! Popup2ViewController
+        let vc = sb.instantiateViewController(withIdentifier: "PopupViewController") as! PopupViewController
         vc.pm25 = self.aqiDataSet[0].list![0].pm25Value!
+        vc.isPm10 = false
         vc.modalPresentationStyle = .overCurrentContext
         
         self.present(vc, animated: true, completion: nil)
