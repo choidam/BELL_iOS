@@ -26,12 +26,13 @@
             </objects>
             <point key="canvasLocation" x="660" y="962"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--View Controller-->
         <scene sceneID="moi-o5-qaQ">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="Z4P-cE-GN0" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="ViewController" automaticallyAdjustsScrollViewInsets="NO" id="Z4P-cE-GN0" customClass="ViewController" customModule="BELL" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Umd-56-keO">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
