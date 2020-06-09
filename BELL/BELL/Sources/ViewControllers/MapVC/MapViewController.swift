@@ -150,11 +150,9 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         }
     }
     
-    // MARK : find location and address
+    // MARK : find location and address (내위치 기반)
     func firstSetting(){
         self.currentLocation = locationManager.location
-        print(self.currentLocation.coordinate.latitude)
-        print(self.currentLocation.coordinate.longitude)
         self.findAddr(lat: self.currentLocation.coordinate.latitude, long: self.currentLocation.coordinate.longitude)
     }
     
@@ -190,7 +188,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         annotation.coordinate = coordinate
         annotation.title = addr
         self.mapView.addAnnotation(annotation)
+        
+        self.findAddr(lat: coordinate.latitude, long: coordinate.longitude)
     }
+    
     
     // MARK : 미세먼지 조회를 원하는 지역 검색
     @IBAction func clickSearchButton(_ sender: UIButton) {
@@ -269,7 +270,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
             if let object = try? decoder.decode(AqiResponseString.self, from: data) {
                 self.aqiDataSet = [object] as! [AqiResponseString]
                 let aqi10Str = self.getPm10String(pm10: self.aqiDataSet[0].list![0].pm10Value!)
-                self.aqiStatusLabel.text = region + "의 공기 상태는 " + aqi10Str + "입니다."
+                self.aqiStatusLabel.text = "현재 대기 상태는 " + aqi10Str + "입니다."
                 self.timeLabel.text = self.aqiDataSet[0].list![0].dataTime! + " 기준"
             }
         } catch let e as NSError {
