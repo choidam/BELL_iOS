@@ -28,10 +28,38 @@
 		B68AF2FF247D927A00C33FC9 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF2FE247D927A00C33FC9 /* MapViewController.swift */; };
 		B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF300247D928700C33FC9 /* AqiViewController.swift */; };
 		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
+		B6BD6CF8248F466F0095B300 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BD6CF7248F466F0095B300 /* NotificationCenter.framework */; };
+		B6BD6CFB248F466F0095B300 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD6CFA248F466F0095B300 /* TodayViewController.swift */; };
+		B6BD6CFE248F466F0095B300 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD6CFC248F466F0095B300 /* MainInterface.storyboard */; };
+		B6BD6D02248F466F0095B300 /* My AQI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B6BD6CF6248F466F0095B300 /* My AQI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
 		B6ECC381248423C500EB7142 /* AqiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC380248423C500EB7142 /* AqiService.swift */; };
 		B6ECC38A2484529B00EB7142 /* WeatherResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B6BD6D00248F466F0095B300 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B68556A7245E86FD00742344 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6BD6CF5248F466F0095B300;
+			remoteInfo = "My AQI";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6BD6D03248F466F0095B300 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B6BD6D02248F466F0095B300 /* My AQI.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		23E772BFD5D5F8BA11DC5A75 /* Pods-BELL.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.debug.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.debug.xcconfig"; sourceTree = "<group>"; };
@@ -59,6 +87,11 @@
 		B68AF300247D928700C33FC9 /* AqiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiViewController.swift; sourceTree = "<group>"; };
 		B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
+		B6BD6CF6248F466F0095B300 /* My AQI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "My AQI.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6BD6CF7248F466F0095B300 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B6BD6CFA248F466F0095B300 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B6BD6CFD248F466F0095B300 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B6BD6CFF248F466F0095B300 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
 		B6ECC380248423C500EB7142 /* AqiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiService.swift; sourceTree = "<group>"; };
 		B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseString.swift; sourceTree = "<group>"; };
@@ -73,6 +106,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6BD6CF3248F466F0095B300 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6BD6CF8248F466F0095B300 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -80,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				8556440705E5C15020EB5CA2 /* Pods_BELL.framework */,
+				B6BD6CF7248F466F0095B300 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -123,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				B68556B1245E86FD00742344 /* BELL */,
+				B6BD6CF9248F466F0095B300 /* My AQI */,
 				B68556B0245E86FD00742344 /* Products */,
 				B93385885D3763B81D441359 /* Pods */,
 				5786FE0B857FD93866D6D3B1 /* Frameworks */,
@@ -133,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				B68556AF245E86FD00742344 /* BELL.app */,
+				B6BD6CF6248F466F0095B300 /* My AQI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -221,6 +265,16 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		B6BD6CF9248F466F0095B300 /* My AQI */ = {
+			isa = PBXGroup;
+			children = (
+				B6BD6CFA248F466F0095B300 /* TodayViewController.swift */,
+				B6BD6CFC248F466F0095B300 /* MainInterface.storyboard */,
+				B6BD6CFF248F466F0095B300 /* Info.plist */,
+			);
+			path = "My AQI";
+			sourceTree = "<group>";
+		};
 		B6ECC37D2483855800EB7142 /* AqiDetailVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -250,15 +304,34 @@
 				B68556AC245E86FD00742344 /* Frameworks */,
 				B68556AD245E86FD00742344 /* Resources */,
 				2FF2B0D93C4C1A810853C486 /* [CP] Embed Pods Frameworks */,
+				B6BD6D03248F466F0095B300 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B6BD6D01248F466F0095B300 /* PBXTargetDependency */,
 			);
 			name = BELL;
 			productName = BELL;
 			productReference = B68556AF245E86FD00742344 /* BELL.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B6BD6CF5248F466F0095B300 /* My AQI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6BD6D06248F466F0095B300 /* Build configuration list for PBXNativeTarget "My AQI" */;
+			buildPhases = (
+				B6BD6CF2248F466F0095B300 /* Sources */,
+				B6BD6CF3248F466F0095B300 /* Frameworks */,
+				B6BD6CF4248F466F0095B300 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "My AQI";
+			productName = "My AQI";
+			productReference = B6BD6CF6248F466F0095B300 /* My AQI.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -271,6 +344,9 @@
 				ORGANIZATIONNAME = "최은지";
 				TargetAttributes = {
 					B68556AE245E86FD00742344 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					B6BD6CF5248F466F0095B300 = {
 						CreatedOnToolsVersion = 11.3.1;
 					};
 				};
@@ -289,6 +365,7 @@
 			projectRoot = "";
 			targets = (
 				B68556AE245E86FD00742344 /* BELL */,
+				B6BD6CF5248F466F0095B300 /* My AQI */,
 			);
 		};
 /* End PBXProject section */
@@ -304,6 +381,14 @@
 				B68556BA245E86FD00742344 /* Main.storyboard in Resources */,
 				B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */,
 				B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B6BD6CF4248F466F0095B300 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6BD6CFE248F466F0095B300 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,7 +461,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		B6BD6CF2248F466F0095B300 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6BD6CFB248F466F0095B300 /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B6BD6D01248F466F0095B300 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6BD6CF5248F466F0095B300 /* My AQI */;
+			targetProxy = B6BD6D00248F466F0095B300 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		B68556B8245E86FD00742344 /* Main.storyboard */ = {
@@ -393,6 +494,14 @@
 				B68556BE245E86FE00742344 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B6BD6CFC248F466F0095B300 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6BD6CFD248F466F0095B300 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -516,6 +625,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 23E772BFD5D5F8BA11DC5A75 /* Pods-BELL.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BELL/Info.plist;
@@ -534,6 +644,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = BELL/Info.plist;
@@ -543,6 +654,42 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.mj.BELL;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		B6BD6D04248F466F0095B300 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "My AQI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj.BELL.My-AQI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		B6BD6D05248F466F0095B300 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "My AQI/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.mj.BELL.My-AQI";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -565,6 +712,15 @@
 			buildConfigurations = (
 				B68556C4245E86FE00742344 /* Debug */,
 				B68556C5245E86FE00742344 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B6BD6D06248F466F0095B300 /* Build configuration list for PBXNativeTarget "My AQI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6BD6D04248F466F0095B300 /* Debug */,
+				B6BD6D05248F466F0095B300 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
