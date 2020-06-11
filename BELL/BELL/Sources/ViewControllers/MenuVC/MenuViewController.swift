@@ -37,7 +37,6 @@ class MenuViewController: UIViewController {
     // MARK : 앱 정보
     @IBAction func goAppInfo(_ sender: UIButton) {
         let vc = self.storyboard?.instantiateViewController(withIdentifier: "AppInfoViewController") as! AppInfoViewController
-        
         self.navigationController?.pushViewController(vc, animated: true)
     }
     
@@ -48,7 +47,8 @@ class MenuViewController: UIViewController {
     
     // MARK : 이용 의견
     @IBAction func goOpinion(_ sender: UIButton) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "OpinionViewController") as! OpinionViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 

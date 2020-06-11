@@ -9,22 +9,17 @@
 import UIKit
 
 class AppInfoViewController: UIViewController {
-
+    
+    
+    @IBOutlet weak var openButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        self.openButton.layer.borderColor = UIColor.gray.cgColor
+        self.openButton.layer.borderWidth = 1
+        self.openButton.layer.cornerRadius = 5
+        
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
