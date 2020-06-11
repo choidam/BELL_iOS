@@ -9,22 +9,37 @@
 import UIKit
 
 class MenuViewController: UIViewController {
-
+    
+    @IBOutlet weak var loginButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.loginButton.layer.borderWidth = 1
+        self.loginButton.layer.borderColor = UIColor.gray.cgColor
+        self.loginButton.layer.cornerRadius = 12
 
-        // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK : 공지사항
+    @IBAction func goNotice(_ sender: UIButton) {
+        
     }
-    */
+    
+    // MARK : 앱 정보
+    @IBAction func goAppInfo(_ sender: UIButton) {
+        
+    }
+    
+    // MARK : 고객 지원
+    @IBAction func goCustomer(_ sender: UIButton) {
+        
+    }
+    
+    // MARK : 이용 의견
+    @IBAction func goOpinion(_ sender: UIButton) {
+        
+    }
+    
 
 }
