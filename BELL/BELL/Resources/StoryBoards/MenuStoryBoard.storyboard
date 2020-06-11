@@ -38,6 +38,9 @@
                                 <state key="normal" title="로그인">
                                     <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="goLogin:" destination="uvL-OP-dUS" eventType="touchUpInside" id="o1R-wq-1ry"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="서비스 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVQ-H0-6kH">
                                 <rect key="frame" x="18" y="170" width="55.5" height="14.5"/>
@@ -255,6 +258,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCV-ig-RPW" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="852.17391304347836" y="135.9375"/>
+        </scene>
+        <!--Notice View Controller-->
+        <scene sceneID="dNb-jB-Llc">
+            <objects>
+                <viewController storyboardIdentifier="NoticeViewController" id="uhF-kq-AIX" customClass="NoticeViewController" customModule="BELL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="KJe-JR-Wzb">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="'BELL' 신규 서비스 오픈" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z5J-at-QvT">
+                                <rect key="frame" x="18" y="64" width="163" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="Z5J-at-QvT" firstAttribute="top" secondItem="e2p-gU-L5s" secondAttribute="top" constant="20" id="jzN-lg-ers"/>
+                            <constraint firstItem="Z5J-at-QvT" firstAttribute="leading" secondItem="e2p-gU-L5s" secondAttribute="leading" constant="18" id="w4x-x0-x6z"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="e2p-gU-L5s"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WXY-mQ-CsS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="852" y="838"/>
+        </scene>
+        <!--App Info View Controller-->
+        <scene sceneID="Tnl-CT-dve">
+            <objects>
+                <viewController storyboardIdentifier="AppInfoViewController" id="PiU-kf-Xqp" customClass="AppInfoViewController" customModule="BELL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vZi-Ra-7hF">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="96n-Y1-Zri"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kEO-P4-tsU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1649" y="838"/>
         </scene>
         <!--Menu-->
         <scene sceneID="scZ-q5-lj3">

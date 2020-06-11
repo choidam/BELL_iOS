@@ -32,6 +32,8 @@
 		B6BD6D5F248F78F60095B300 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD6D5E248F78F60095B300 /* SplashViewController.swift */; };
 		B6BD6D61248F83FF0095B300 /* MenuStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD6D60248F83FF0095B300 /* MenuStoryBoard.storyboard */; };
 		B6BD6D64248F84250095B300 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD6D63248F84250095B300 /* MenuViewController.swift */; };
+		B6DE64772491C5E800DB1053 /* NoticeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE64762491C5E800DB1053 /* NoticeViewController.swift */; };
+		B6DE64792491C82900DB1053 /* AppInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6DE64782491C82900DB1053 /* AppInfoViewController.swift */; };
 		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
 		B6ECC381248423C500EB7142 /* AqiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC380248423C500EB7142 /* AqiService.swift */; };
 		B6ECC38A2484529B00EB7142 /* WeatherResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */; };
@@ -67,6 +69,8 @@
 		B6BD6D5E248F78F60095B300 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		B6BD6D60248F83FF0095B300 /* MenuStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStoryBoard.storyboard; sourceTree = "<group>"; };
 		B6BD6D63248F84250095B300 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		B6DE64762491C5E800DB1053 /* NoticeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticeViewController.swift; sourceTree = "<group>"; };
+		B6DE64782491C82900DB1053 /* AppInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfoViewController.swift; sourceTree = "<group>"; };
 		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
 		B6ECC380248423C500EB7142 /* AqiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiService.swift; sourceTree = "<group>"; };
 		B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseString.swift; sourceTree = "<group>"; };
@@ -245,6 +249,8 @@
 			isa = PBXGroup;
 			children = (
 				B6BD6D63248F84250095B300 /* MenuViewController.swift */,
+				B6DE64762491C5E800DB1053 /* NoticeViewController.swift */,
+				B6DE64782491C82900DB1053 /* AppInfoViewController.swift */,
 			);
 			path = MenuVC;
 			sourceTree = "<group>";
@@ -390,6 +396,7 @@
 				B68556D0245F4CAB00742344 /* UIColor+Extensions.swift in Sources */,
 				B681CF8024829C1700DB3526 /* AqiChartView.swift in Sources */,
 				B6BD6D5F248F78F60095B300 /* SplashViewController.swift in Sources */,
+				B6DE64792491C82900DB1053 /* AppInfoViewController.swift in Sources */,
 				B68556B7245E86FD00742344 /* ViewController.swift in Sources */,
 				B629DDDB248D71DC003D56B0 /* AqiSlider.swift in Sources */,
 				B68556CA245F4C2600742344 /* AqiResponseString.swift in Sources */,
@@ -400,6 +407,7 @@
 				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
 				B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */,
+				B6DE64772491C5E800DB1053 /* NoticeViewController.swift in Sources */,
 				B6BD6D64248F84250095B300 /* MenuViewController.swift in Sources */,
 				B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,

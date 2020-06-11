@@ -21,14 +21,24 @@ class MenuViewController: UIViewController {
 
     }
     
+    // MARK : 로그인
+    @IBAction func goLogin(_ sender: UIButton) {
+        let alert = UIAlertController(title: "서비스 준비중입니다.", message: "조금만 기다려주세요!", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     // MARK : 공지사항
     @IBAction func goNotice(_ sender: UIButton) {
-        
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "NoticeViewController") as! NoticeViewController
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK : 앱 정보
     @IBAction func goAppInfo(_ sender: UIButton) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "AppInfoViewController") as! AppInfoViewController
         
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     // MARK : 고객 지원
