@@ -30,6 +30,8 @@
 		B68AF303247DA14600C33FC9 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B68AF302247DA14600C33FC9 /* UIView+Extensions.swift */; };
 		B6BD6D5C248F700C0095B300 /* SplashStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD6D5B248F700C0095B300 /* SplashStoryBoard.storyboard */; };
 		B6BD6D5F248F78F60095B300 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD6D5E248F78F60095B300 /* SplashViewController.swift */; };
+		B6BD6D61248F83FF0095B300 /* MenuStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6BD6D60248F83FF0095B300 /* MenuStoryBoard.storyboard */; };
+		B6BD6D64248F84250095B300 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD6D63248F84250095B300 /* MenuViewController.swift */; };
 		B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */; };
 		B6ECC381248423C500EB7142 /* AqiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC380248423C500EB7142 /* AqiService.swift */; };
 		B6ECC38A2484529B00EB7142 /* WeatherResponseString.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */; };
@@ -63,6 +65,8 @@
 		B6A26B94F1781B85799ABC04 /* Pods-BELL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BELL.release.xcconfig"; path = "Target Support Files/Pods-BELL/Pods-BELL.release.xcconfig"; sourceTree = "<group>"; };
 		B6BD6D5B248F700C0095B300 /* SplashStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SplashStoryBoard.storyboard; sourceTree = "<group>"; };
 		B6BD6D5E248F78F60095B300 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		B6BD6D60248F83FF0095B300 /* MenuStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MenuStoryBoard.storyboard; sourceTree = "<group>"; };
+		B6BD6D63248F84250095B300 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		B6ECC37E2483857500EB7142 /* AqiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiDetailViewController.swift; sourceTree = "<group>"; };
 		B6ECC380248423C500EB7142 /* AqiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AqiService.swift; sourceTree = "<group>"; };
 		B6ECC3892484529B00EB7142 /* WeatherResponseString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseString.swift; sourceTree = "<group>"; };
@@ -182,6 +186,7 @@
 				B68556D5245F4D3200742344 /* MapStoryBoard.storyboard */,
 				B629DDD3248D2F7D003D56B0 /* PopupStoryBoard.storyboard */,
 				B6BD6D5B248F700C0095B300 /* SplashStoryBoard.storyboard */,
+				B6BD6D60248F83FF0095B300 /* MenuStoryBoard.storyboard */,
 			);
 			path = StoryBoards;
 			sourceTree = "<group>";
@@ -217,6 +222,7 @@
 		B68556CE245F4C7500742344 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B6BD6D62248F84130095B300 /* MenuVC */,
 				B6BD6D5D248F70320095B300 /* SplashVC */,
 				B629DDD5248D2FA3003D56B0 /* PopupVC */,
 				B6ECC37D2483855800EB7142 /* AqiDetailVC */,
@@ -233,6 +239,14 @@
 				B6BD6D5E248F78F60095B300 /* SplashViewController.swift */,
 			);
 			path = SplashVC;
+			sourceTree = "<group>";
+		};
+		B6BD6D62248F84130095B300 /* MenuVC */ = {
+			isa = PBXGroup;
+			children = (
+				B6BD6D63248F84250095B300 /* MenuViewController.swift */,
+			);
+			path = MenuVC;
 			sourceTree = "<group>";
 		};
 		B6ECC37D2483855800EB7142 /* AqiDetailVC */ = {
@@ -318,6 +332,7 @@
 				B68556BC245E86FE00742344 /* Assets.xcassets in Resources */,
 				B68556BA245E86FD00742344 /* Main.storyboard in Resources */,
 				B68556D6245F4D3200742344 /* MapStoryBoard.storyboard in Resources */,
+				B6BD6D61248F83FF0095B300 /* MenuStoryBoard.storyboard in Resources */,
 				B68556D4245F4D0700742344 /* AqiStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -385,6 +400,7 @@
 				B68556D2245F4CBA00742344 /* AqiBar.swift in Sources */,
 				B68AF301247D928700C33FC9 /* AqiViewController.swift in Sources */,
 				B6ECC37F2483857500EB7142 /* AqiDetailViewController.swift in Sources */,
+				B6BD6D64248F84250095B300 /* MenuViewController.swift in Sources */,
 				B64D52C9247FB89C001B35C3 /* aqiNavViewController.swift in Sources */,
 				B68556B3245E86FD00742344 /* AppDelegate.swift in Sources */,
 				B68556B5245E86FD00742344 /* SceneDelegate.swift in Sources */,

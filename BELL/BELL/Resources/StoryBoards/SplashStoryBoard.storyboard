@@ -60,6 +60,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6kp-FS-prs"/>
                     </view>
+                    <connections>
+                        <outlet property="bellUIImage" destination="suG-d5-abL" id="FcR-Xz-Wt9"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Awf-Cd-EZI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
