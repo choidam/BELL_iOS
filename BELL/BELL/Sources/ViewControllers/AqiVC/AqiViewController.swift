@@ -37,6 +37,10 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     static var aqiList:[Double] = []
     
+    @IBOutlet weak var smallWeatherLabel: UILabel!
+    @IBOutlet weak var bigWeatherLabel: UILabel!
+    
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
         if CLLocationManager.authorizationStatus() == .authorizedWhenInUse {
@@ -85,7 +89,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             self.animateEmojiImage()
         })
         
-//        self.connectWeatherAPI()
+        self.connectWeatherAPI()
     }
     
     // MARK : 위치 받아오기 에러 처리
@@ -218,7 +222,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK : 날씨 API 연결
     func connectWeatherAPI(){
-        let weatherURLString = "https://api.waqi.info/feed/here/?token=42449a98a32888268828e3059c4489aef7625391"
+        let weatherURLString = "https://api.openweathermap.org/data/2.5/weather?q=seoul&appid=853c909f0f8639d63344ec1b9f73c12a"
         let weatherURL = URL(string: weatherURLString)!
         
         do {
@@ -229,6 +233,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             
             if let weatherObject = try? weatherDecoder.decode(WeatherResponseString.self, from: weatherData) {
                 print("object?? ", weatherObject)
+                
             }
             
         } catch let e as NSError {

@@ -320,12 +320,14 @@
                         <outlet property="aqiStatusBigLabel" destination="4nF-eA-Ekd" id="Wmy-FU-aaE"/>
                         <outlet property="aqiStatusSmallLabel" destination="bQz-43-jPo" id="bST-5p-ihT"/>
                         <outlet property="aqiView" destination="jDK-lB-u8j" id="ttb-Af-aUI"/>
+                        <outlet property="bigWeatherLabel" destination="SpZ-dC-RK0" id="VpG-d9-DuQ"/>
                         <outlet property="chartWholeView" destination="Iwn-VJ-s65" id="3AB-kW-YRo"/>
                         <outlet property="goDetailButton" destination="vS5-rP-G22" id="LO0-ij-qQG"/>
                         <outlet property="graphView" destination="IE1-op-9cH" id="EFh-5l-0jN"/>
                         <outlet property="pm10Label" destination="HbF-Vh-cFz" id="lfx-9X-Dm3"/>
                         <outlet property="pm25Label" destination="wpD-v9-MrF" id="YJX-Oz-v4C"/>
                         <outlet property="reloadButton" destination="SmP-eK-Kxn" id="hwp-tR-c3e"/>
+                        <outlet property="smallWeatherLabel" destination="7H3-BP-7vO" id="TbH-Hh-vWX"/>
                         <outlet property="weatherView" destination="na8-xU-MPv" id="0Y8-8H-mua"/>
                     </connections>
                 </viewController>

@@ -393,25 +393,25 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="의견을 보내주세요" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L7g-Ep-eKJ">
-                                <rect key="frame" x="18" y="114" width="178.5" height="30"/>
+                                <rect key="frame" x="18" y="109" width="178.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="BELL 은 고객님의 다양한 의견을 듣고 싶습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NAZ-mp-NXD">
-                                <rect key="frame" x="18" y="159" width="266" height="17"/>
+                                <rect key="frame" x="18" y="154" width="266" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="보내주신 내용을 반영하여 더 좋은 서비스로 보답하겠습니다." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LHu-Ya-nek">
-                                <rect key="frame" x="18" y="181" width="330" height="17"/>
+                                <rect key="frame" x="18" y="176" width="330" height="17"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" red="0.22352941179999999" green="0.23529411759999999" blue="0.25490196079999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nov-Lz-F6X">
-                                <rect key="frame" x="0.0" y="218" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="213" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9wb-nk-Crj">
                                         <rect key="frame" x="18" y="16.5" width="36.5" height="17"/>
@@ -453,7 +453,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="lGn-NC-GQE">
-                                <rect key="frame" x="18" y="278" width="378" height="150"/>
+                                <rect key="frame" x="18" y="273" width="378" height="150"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="0tw-B2-xSw"/>
@@ -492,7 +492,7 @@
                             <constraint firstItem="FTZ-9Z-zDr" firstAttribute="trailing" secondItem="ZLJ-Kj-CV9" secondAttribute="trailing" constant="18" id="oGO-TH-WMj"/>
                             <constraint firstItem="nov-Lz-F6X" firstAttribute="trailing" secondItem="FTZ-9Z-zDr" secondAttribute="trailing" id="rcs-3n-6ML"/>
                             <constraint firstItem="nov-Lz-F6X" firstAttribute="top" secondItem="LHu-Ya-nek" secondAttribute="bottom" constant="20" id="vdX-l5-jx7"/>
-                            <constraint firstItem="L7g-Ep-eKJ" firstAttribute="top" secondItem="UkH-WY-8Rb" secondAttribute="bottom" constant="10" id="x9I-Jr-faS"/>
+                            <constraint firstItem="L7g-Ep-eKJ" firstAttribute="top" secondItem="UkH-WY-8Rb" secondAttribute="bottom" constant="5" id="x9I-Jr-faS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="FTZ-9Z-zDr"/>
                         <connections>
