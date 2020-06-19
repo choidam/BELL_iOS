@@ -37,6 +37,8 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     static var aqiList:[Double] = []
     
+
+    @IBOutlet weak var weatherAddLabel: UILabel!
     @IBOutlet weak var smallWeatherLabel: UILabel!
     @IBOutlet weak var bigWeatherLabel: UILabel!
     
@@ -157,6 +159,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 }
                 if let area: String = address.last?.locality{
                     self.connectAqiAPI(region: area)
+                    self.weatherAddLabel.text = area
                 }
             }
         })
@@ -205,7 +208,9 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 
                 for aqiDouble in self.aqiDataSet[0].list! {
                     let doubleVal = Double(aqiDouble.pm10Value!)
-//                    AqiViewController.aqiList.append(doubleVal!)
+                    AqiViewController.aqiList.append(doubleVal!)
+//                    AqiChartView.aqiBars.notifyDataChanged()
+//                    AqiChartView.notifyDataSetChanged()
                 }
                 
                 let pm10Val: String = self.aqiDataSet[0].list![0].pm10Value ?? ""
