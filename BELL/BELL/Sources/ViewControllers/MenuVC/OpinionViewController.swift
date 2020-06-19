@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import MessageUI
+import Foundation
 
-class OpinionViewController: UIViewController, UIGestureRecognizerDelegate  {
+class OpinionViewController: UIViewController, UIGestureRecognizerDelegate, MFMailComposeViewControllerDelegate {
     
     @IBOutlet weak var submitButton: UIButton!
     
@@ -28,8 +30,9 @@ class OpinionViewController: UIViewController, UIGestureRecognizerDelegate  {
         
         self.submitButton.layer.cornerRadius = 5
         
-        self.OpinionTextField.text = "내용을 입력해 주세요."
-        self.OpinionTextField.textColor = UIColor.gray
+        if !MFMailComposeViewController.canSendMail(){
+            return
+        }
         
     }
     
@@ -38,4 +41,26 @@ class OpinionViewController: UIViewController, UIGestureRecognizerDelegate  {
         self.view.endEditing(true)
         return true
     }
+    
+    // MARK : send mail
+    @IBAction func clickSendMailButton(_ sender: UIButton) {
+        let composeVC = MFMailComposeViewController()
+        composeVC.mailComposeDelegate = self
+        
+        // configure fields
+        composeVC.setToRecipients(["cheunji8209@gmail.com"])
+        composeVC.setSubject("customer of BELL")
+        composeVC.setMessageBody(self.OpinionTextField.text, isHTML: false)
+        
+        let alert = UIAlertController(title: "메일을 성공적으로 보냈습니다!", message: "소중한 의견 감사드립니다. 더 나은 BELL 로 찾아뵙겠습니다.", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "확인", style: UIAlertAction.Style.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+        self.OpinionTextField.text = ""
+        
+        // present ViewController Modally
+//        self.present(composeVC, animated: true, completion: nil)
+    }
+    
+    
 }

@@ -287,9 +287,9 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IG1-lm-xwU">
-                                <rect key="frame" x="18" y="159" width="378" height="400"/>
+                                <rect key="frame" x="18" y="159" width="378" height="350"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="400" id="UPW-Lk-3jL"/>
+                                    <constraint firstAttribute="height" constant="350" id="UPW-Lk-3jL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <nil key="textColor"/>
@@ -471,6 +471,9 @@
                                 <state key="normal" title="Button">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.93725490199999995" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="clickSendMailButton:" destination="EKi-3R-J4N" eventType="touchUpInside" id="qBk-w3-tBj"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

@@ -29,12 +29,6 @@ class NoticeViewController: UIViewController {
         
             BELL 앱 버전은 [설정 > 앱 정보] 에서 확인하실 수 있습니다.
         """
-        
-        
-        
     }
-    
-
-    
 
 }
