@@ -4,8 +4,6 @@
 
 <h1 align="center"> BELL _ iOS </h1>
 
----
-
 <p align="center">
   
   <img src="https://img.shields.io/badge/Capstone-2020-red" />
@@ -21,4 +19,30 @@
   Myongji Univ. Capstone Project 2020-1 <br/> 
   Fine dust notification service
 </p>
+
+<br/>
+
+## 📕 Development Environment
+
+- Xcode : 11.3.1
+- Swift : 5.0.1
+- cocoapods : 1.9.1
+- Libraries
+  - [Macaw](https://github.com/exyte/Macaw)
+
+<br/>
+
+## 📕 How to start
+
+```
+$ git clone https://github.com/ChoiEunji0114/BELL_iOS.git
+$ cd BELL
+$ pod install
+```
+
+<br/>
+
+## 🐛 Issue
+
+If you found a bug in this repository, please let me know through the [Issue](https://github.com/ChoiEunji0114/BELL_iOS/issues).
 
