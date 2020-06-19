@@ -228,14 +228,10 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
         do {
             let weatherResponse = try String(contentsOf: weatherURL)
             guard let weatherData = weatherResponse.data(using: .utf8) else { return }
-            print("data???", weatherData)
             let weatherDecoder = JSONDecoder()
-            
             if let weatherObject = try? weatherDecoder.decode(WeatherResponseString.self, from: weatherData) {
-                print("object?? ", weatherObject)
-                
+                self.bigWeatherLabel.text = String(format: "%.f", weatherObject.main.temp - 273.15) + " °C"
             }
-            
         } catch let e as NSError {
             print(e.localizedDescription)
         }
