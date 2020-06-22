@@ -56,8 +56,22 @@ $ pod install
 
 <img src="./screenshot/menu.gif" width="250">
 
+<br/>
+
+## API
+
+1. [Fine dust API](https://www.data.go.kr/dataset/15000581/openapi.do)
+2. [Weather API](https://openweathermap.org/)
+
+<br/>
 
 ## 🐛 Issue
 
 If you found a bug in this repository, please let me know through the [Issue](https://github.com/ChoiEunji0114/BELL_iOS/issues).
+
+<br/>
+
+> [This](https://github.com/mju-capstone/BELL_data_analysis) is a page for data analysis 
+
+> [This](https://github.com/mju-capstone/BELL_web) is BELL webpage
 
