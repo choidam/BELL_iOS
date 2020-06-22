@@ -192,7 +192,6 @@ class MapViewController: UIViewController, CLLocationManagerDelegate, MKMapViewD
         self.findAddr(lat: coordinate.latitude, long: coordinate.longitude)
     }
     
-    
     // MARK : 미세먼지 조회를 원하는 지역 검색
     @IBAction func clickSearchButton(_ sender: UIButton) {
         self.addressLabel.text = self.searchTextField.text

@@ -98,21 +98,30 @@ class AqiChartView: MacawView {
     static func createData() -> [AqiBar] {
         var aqiBarList: [AqiBar] = []
         
-        // connect to api
-        for aqiIdx in AqiViewController.aqiList {
-            let aqi = AqiBar(time: "14시", aqiIndex: aqiIdx)
-            aqiBarList.append(aqi)
-        }
-
-        // sample data (api 연동 안 할 경우)
-        if aqiBarList.count == 0 {
-            for i in 1...8 {
-                let aqi = AqiBar(time: "10시", aqiIndex: 50)
-                aqiBarList.append(aqi)
-            }
-        }
+//        // connect to api
+//        for aqiIdx in AqiViewController.aqiList {
+//            let aqi = AqiBar(time: "14시", aqiIndex: aqiIdx)
+//            aqiBarList.append(aqi)
+//        }
+//
+//        // sample data (api 연동 안 할 경우)
+//        if aqiBarList.count == 0 {
+//            for i in 1...8 {
+//                let aqi = AqiBar(time: "10시", aqiIndex: 50)
+//                aqiBarList.append(aqi)
+//            }
+//        }
         
-        return aqiBarList
+        let aqi1 = AqiBar(time: "5시", aqiIndex: 45)
+        let aqi2 = AqiBar(time: "6시", aqiIndex: 30)
+        let aqi3 = AqiBar(time: "7시", aqiIndex: 20)
+        let aqi4 = AqiBar(time: "8시", aqiIndex: 10)
+        let aqi5 = AqiBar(time: "9시", aqiIndex: 30)
+        let aqi6 = AqiBar(time: "10시", aqiIndex: 50)
+        let aqi7 = AqiBar(time: "11시", aqiIndex: 40)
+        let aqi8 = AqiBar(time: "12시", aqiIndex: 70)
+        
+        return [aqi1, aqi2, aqi3, aqi4, aqi5, aqi6, aqi7, aqi8]
     }
 
 }

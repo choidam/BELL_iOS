@@ -208,7 +208,7 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
                 
                 for aqiDouble in self.aqiDataSet[0].list! {
                     let doubleVal = Double(aqiDouble.pm10Value!)
-                    AqiViewController.aqiList.append(doubleVal!)
+//                    AqiViewController.aqiList.append(doubleVal!)
 //                    AqiChartView.aqiBars.notifyDataChanged()
 //                    AqiChartView.notifyDataSetChanged()
                 }
