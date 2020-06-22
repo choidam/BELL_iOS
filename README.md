@@ -42,6 +42,21 @@ $ pod install
 
 <br/>
 
+## 📱 Screenshots 
+
+### main tab
+
+<img src="./screenshot/main1.gif" width="250"> <img src="./screenshot/main2.gif" width="250"> 
+
+### map tab
+
+<img src="./screenshot/map0.gif" width="250"> <img src="./screenshot/map1.gif" width="250"> <img src="./screenshot/map2.gif" width="250">
+
+### menu tab
+
+<img src="./screenshot/menu.gif" width="250">
+
+
 ## 🐛 Issue
 
 If you found a bug in this repository, please let me know through the [Issue](https://github.com/ChoiEunji0114/BELL_iOS/issues).
