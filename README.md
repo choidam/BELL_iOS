@@ -42,6 +42,12 @@ $ pod install
 
 <br/>
 
+## 🗓 Development Period
+
+- 2020.06.02 ~ 2020.06.22
+
+<br/>
+
 ## 📱 Screenshots 
 
 ### main tab
@@ -58,7 +64,7 @@ $ pod install
 
 <br/>
 
-## API
+## 📕 API
 
 1. [Fine dust API](https://www.data.go.kr/dataset/15000581/openapi.do)
 2. [Weather API](https://openweathermap.org/)
