@@ -37,11 +37,12 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
     
     static var aqiList:[Double] = []
     
-
     @IBOutlet weak var weatherAddLabel: UILabel!
     @IBOutlet weak var smallWeatherLabel: UILabel!
     @IBOutlet weak var bigWeatherLabel: UILabel!
     
+    @IBOutlet weak var maxCelsiusLabel: UILabel!
+    @IBOutlet weak var minCelsiusLabel: UILabel!
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         locationManager = manager
@@ -235,7 +236,13 @@ class AqiViewController: UIViewController, CLLocationManagerDelegate {
             guard let weatherData = weatherResponse.data(using: .utf8) else { return }
             let weatherDecoder = JSONDecoder()
             if let weatherObject = try? weatherDecoder.decode(WeatherResponseString.self, from: weatherData) {
+                
                 self.bigWeatherLabel.text = String(format: "%.f", weatherObject.main.temp - 273.15) + " °C"
+                
+                self.maxCelsiusLabel.text = "최고 " + String(format: "%.f", weatherObject.main.tempMin-273.15) + " °C"
+                
+                self.minCelsiusLabel.text = "최저 " + String(format: "%.f", weatherObject.main.tempMax-273.15) + " °C"
+                
             }
         } catch let e as NSError {
             print(e.localizedDescription)
