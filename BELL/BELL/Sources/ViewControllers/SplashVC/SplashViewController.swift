@@ -15,7 +15,6 @@ class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let orangeGradient = [UIColor(rgb: 0xFC4761), UIColor(rgb: 0xFC5763), UIColor(rgb: 0xFD6C64), UIColor(rgb: 0xFD8667), UIColor(rgb: 0xFD9367)]
         self.view.setSplashGradientBackground(colorTop: UIColor(rgb: 0xFC5763), colorBottom: UIColor(rgb: 0xFD9367))
         
         self.animateBellImage()
@@ -35,10 +34,9 @@ class SplashViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
-    // MARK : emoji animation
+    // MARK : bell image animation
     func animateBellImage(){
         self.bellUIImage.transform = CGAffineTransform(rotationAngle: -0.1)
-//        self.bellUIImage.transform = CGAffineTransform(scaleX: 0.7, y: 0.7)
         UIView.animate(
             withDuration: 1.2,
             delay: 0,
@@ -46,9 +44,7 @@ class SplashViewController: UIViewController {
             initialSpringVelocity: 0.2,
             options: .curveEaseOut,
             animations: {
-//                self.bellUIImage.transform = CGAffineTransform(scaleX: 1, y: 1)
                 self.bellUIImage.transform = CGAffineTransform(rotationAngle: 0.1)
-//                self.bellUIImage.transform = CGAffineTransform(rotationAngle: -0.2)
         }, completion: nil)
     }
 
