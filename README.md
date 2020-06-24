@@ -42,13 +42,17 @@ $ pod install
 
 <br/>
 
-## 🗓 Development Period
+## 🗓 Development
 
 - 2020.06.02 ~ 2020.06.22
 
 <br/>
 
 ## 📱 Screenshots 
+
+### Splash
+
+<img src="./screenshot/splash.gif" width="250">
 
 ### main tab
 
