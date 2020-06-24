@@ -75,6 +75,13 @@ $ pod install
 
 <br/>
 
+## 📝 LICENSE
+
+Licensed under the [MIT License.](https://github.com/ChoiEunji0114/BELL_iOS/blob/master/LICENSE)
+
+<br/>
+
+
 ## 🐛 Issue
 
 If you found a bug in this repository, please let me know through the [Issue](https://github.com/ChoiEunji0114/BELL_iOS/issues).
